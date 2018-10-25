@@ -1,0 +1,9 @@
+diff a/Base de datos/[6-10-2018] Base de datos Laboratorio.sql b/Base de datos/[6-10-2018] Base de datos Laboratorio.sql	(rejected hunks)
+@@ -8,7 +8,6 @@
+ use master
+ go
+ 
+-drop database IF EXISTS GestorDeClinica --para borrar la base de datos, hay que estar en el loogin de tu pc normal
+  --para borrar la base de datos, hay que estar en el loogin de tu pc normal
+ GO
+ 
