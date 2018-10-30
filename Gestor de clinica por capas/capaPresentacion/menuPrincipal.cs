@@ -133,17 +133,23 @@ namespace capaPresentacion
             panelContTemas.Visible = false;
             contNotificicaciones.Visible = true;
 
-            string[] notiParametros = new string[1];
-            listNotificaciones.Items.Clear();
-            notiParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";
-
-            List<object[]>datos = sp.lt(notiParametros, "verNotificacion");
-
-            foreach (object[] notificacion in datos)
+            try
             {
-                listNotificaciones.Items.Add("["+notificacion[1].ToString()+"] -"+notificacion[2].ToString());
-            }
+                string[] notiParametros = new string[1];
+                listNotificaciones.Items.Clear();
+                notiParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";
 
+                List<object[]> datos = sp.lt(notiParametros, "verNotificacion");
+
+                foreach (object[] notificacion in datos)
+                {
+                    listNotificaciones.Items.Add("[" + notificacion[1].ToString() + "] •" + notificacion[2].ToString());
+                }
+            }
+            catch
+            {
+
+            }
             
         }
 
@@ -173,17 +179,19 @@ namespace capaPresentacion
             {
                 if ((12 - hh) < 0)
                 {
-                    time += "0" + (hh);
-                }
+                    time += (hh -12);
+                }else
                 if ((12 - hh ) > 0)
                 {
-                    time += (hh);
+                    time += "0" + (hh);
                 }
                 else
                 {
                     time += (hh);
                 }
             }
+
+
             time += ":";
 
             if (mm < 10)
@@ -329,25 +337,6 @@ namespace capaPresentacion
             }
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void reloj_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMiPerfil_click(object sender, EventArgs e)
-        {
-            frmPerfil Perfil = new frmPerfil();
-            AbrirFormInPanel(Perfil);
-            this.panelCont.Show();
-        }
-
-
-
         //abre dentro del panel el frm
         private void AbrirFormInPanel(Object Formhijo)
         {
@@ -373,11 +362,31 @@ namespace capaPresentacion
             this.panelCont.Hide();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            frmPerfil Perfil = new frmPerfil();
+            AbrirFormInPanel(Perfil);
+            this.panelCont.Show();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
         {
             aboutUs creditos = new aboutUs();
             AbrirFormInPanel(creditos);
             this.panelCont.Show();
+        }
+
+        private void listNotificaciones_Click(object sender, EventArgs e)
+        {
+            string noti = listNotificaciones.SelectedItem.ToString();
+            string[] mensaje;
+            mensaje = noti.Split('•');
+            mensaje[0] = mensaje[0].Trim('[');
+            mensaje[0] = mensaje[0].Trim(' ');
+            mensaje[0] = mensaje[0].Trim(']');
+            cboDestino.Text = mensaje[0];
+            txtMensaje.Text = mensaje[1];
         }
     }
 }

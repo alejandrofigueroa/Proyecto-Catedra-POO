@@ -38,15 +38,23 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTemas = new System.Windows.Forms.Button();
             this.btnNotificaciones = new System.Windows.Forms.Button();
+            this.panelContTemas = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnPerfil = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnMiPerfil = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.contNotificicaciones = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.listNotificaciones = new System.Windows.Forms.ListBox();
-            this.panelContTemas = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnPerfil = new System.Windows.Forms.Button();
-            this.btnMiPerfil = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.contenedor = new System.Windows.Forms.Panel();
             this.panelCont = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -76,6 +84,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BarraDeEstado = new System.Windows.Forms.StatusStrip();
             this.statusLabelErrores = new System.Windows.Forms.ToolStripStatusLabel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtMensaje = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboDestino = new System.Windows.Forms.ComboBox();
+            this.Enviar = new System.Windows.Forms.Button();
             this.barraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
@@ -83,10 +96,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuOpciones.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.contNotificicaciones.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.panelContTemas.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.contNotificicaciones.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.contenedor.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FotoPerfil)).BeginInit();
@@ -99,6 +116,7 @@
             this.Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraDeEstado.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // barraTitulo
@@ -217,40 +235,6 @@
             this.btnNotificaciones.UseVisualStyleBackColor = false;
             this.btnNotificaciones.Click += new System.EventHandler(this.btnNotificaciones_Click);
             // 
-            // contNotificicaciones
-            // 
-            this.contNotificicaciones.Controls.Add(this.panel13);
-            this.contNotificicaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contNotificicaciones.Location = new System.Drawing.Point(0, 0);
-            this.contNotificicaciones.Name = "contNotificicaciones";
-            this.contNotificicaciones.Size = new System.Drawing.Size(250, 567);
-            this.contNotificicaciones.TabIndex = 1;
-            // 
-            // panel13
-            // 
-            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel13.Controls.Add(this.listNotificaciones);
-            this.panel13.Location = new System.Drawing.Point(0, 51);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(247, 429);
-            this.panel13.TabIndex = 1;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
-            // 
-            // listNotificaciones
-            // 
-            this.listNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(81)))), ((int)(((byte)(112)))));
-            this.listNotificaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listNotificaciones.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listNotificaciones.ForeColor = System.Drawing.Color.White;
-            this.listNotificaciones.FormattingEnabled = true;
-            this.listNotificaciones.ItemHeight = 15;
-            this.listNotificaciones.Location = new System.Drawing.Point(0, 0);
-            this.listNotificaciones.Name = "listNotificaciones";
-            this.listNotificaciones.Size = new System.Drawing.Size(247, 435);
-            this.listNotificaciones.TabIndex = 0;
-            // 
             // panelContTemas
             // 
             this.panelContTemas.Controls.Add(this.panel9);
@@ -264,14 +248,26 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.button1);
-            this.panel9.Controls.Add(this.btnPerfil);
+            this.panel9.Controls.Add(this.panel6);
+            this.panel9.Controls.Add(this.panel4);
             this.panel9.Controls.Add(this.btnMiPerfil);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 21);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(250, 155);
+            this.panel9.Size = new System.Drawing.Size(250, 445);
             this.panel9.TabIndex = 6;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.panel6.Controls.Add(this.button1);
+            this.panel6.Controls.Add(this.btnPerfil);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 147);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(250, 128);
+            this.panel6.TabIndex = 10;
             // 
             // button1
             // 
@@ -282,13 +278,13 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 60);
+            this.button1.Location = new System.Drawing.Point(0, 80);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 30);
-            this.button1.TabIndex = 8;
+            this.button1.Size = new System.Drawing.Size(250, 33);
+            this.button1.TabIndex = 12;
             this.button1.Text = "Creditos";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // btnPerfil
             // 
@@ -299,13 +295,103 @@
             this.btnPerfil.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerfil.ForeColor = System.Drawing.Color.White;
             this.btnPerfil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPerfil.Location = new System.Drawing.Point(0, 30);
+            this.btnPerfil.Location = new System.Drawing.Point(0, 50);
             this.btnPerfil.Name = "btnPerfil";
             this.btnPerfil.Size = new System.Drawing.Size(250, 30);
-            this.btnPerfil.TabIndex = 7;
+            this.btnPerfil.TabIndex = 11;
             this.btnPerfil.Text = "Mi Perfil";
             this.btnPerfil.UseVisualStyleBackColor = true;
-            this.btnPerfil.Click += new System.EventHandler(this.btnMiPerfil_click);
+            this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.AccessibleName = "";
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(250, 50);
+            this.panel7.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(92, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 28);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Perfil";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 24);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(250, 123);
+            this.panel4.TabIndex = 9;
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 80);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(250, 30);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Roles";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 50);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(250, 30);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Usuarios";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.AccessibleName = "";
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(250, 50);
+            this.panel5.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(32, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 28);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Administracion";
             // 
             // btnMiPerfil
             // 
@@ -318,7 +404,7 @@
             this.btnMiPerfil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMiPerfil.Location = new System.Drawing.Point(0, 0);
             this.btnMiPerfil.Name = "btnMiPerfil";
-            this.btnMiPerfil.Size = new System.Drawing.Size(250, 30);
+            this.btnMiPerfil.Size = new System.Drawing.Size(250, 24);
             this.btnMiPerfil.TabIndex = 6;
             this.btnMiPerfil.Text = "Mi Perfil";
             this.btnMiPerfil.UseVisualStyleBackColor = true;
@@ -330,6 +416,44 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(250, 21);
             this.panel8.TabIndex = 5;
+            // 
+            // contNotificicaciones
+            // 
+            this.contNotificicaciones.Controls.Add(this.Enviar);
+            this.contNotificicaciones.Controls.Add(this.panel13);
+            this.contNotificicaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contNotificicaciones.Location = new System.Drawing.Point(0, 0);
+            this.contNotificicaciones.Name = "contNotificicaciones";
+            this.contNotificicaciones.Size = new System.Drawing.Size(250, 567);
+            this.contNotificicaciones.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel13.Controls.Add(this.panel10);
+            this.panel13.Controls.Add(this.listNotificaciones);
+            this.panel13.Location = new System.Drawing.Point(0, 51);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(247, 486);
+            this.panel13.TabIndex = 1;
+            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
+            // 
+            // listNotificaciones
+            // 
+            this.listNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(81)))), ((int)(((byte)(112)))));
+            this.listNotificaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listNotificaciones.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listNotificaciones.ForeColor = System.Drawing.Color.White;
+            this.listNotificaciones.FormattingEnabled = true;
+            this.listNotificaciones.ItemHeight = 15;
+            this.listNotificaciones.Location = new System.Drawing.Point(0, 0);
+            this.listNotificaciones.Name = "listNotificaciones";
+            this.listNotificaciones.ScrollAlwaysVisible = true;
+            this.listNotificaciones.Size = new System.Drawing.Size(247, 300);
+            this.listNotificaciones.TabIndex = 0;
+            this.listNotificaciones.Click += new System.EventHandler(this.listNotificaciones_Click);
             // 
             // contenedor
             // 
@@ -370,7 +494,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 56);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblFecha
             // 
@@ -396,7 +519,6 @@
             this.reloj.TabIndex = 2;
             this.reloj.Text = "--:--  --";
             this.reloj.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.reloj.Click += new System.EventHandler(this.reloj_Click);
             // 
             // FotoPerfil
             // 
@@ -468,7 +590,6 @@
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Size = new System.Drawing.Size(250, 567);
             this.menuPrincipal.TabIndex = 0;
-            this.menuPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.menuPrincipal_Paint);
             // 
             // panelBotonClinica
             // 
@@ -549,7 +670,7 @@
             this.btnClinica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClinica.FlatAppearance.BorderSize = 0;
             this.btnClinica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClinica.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClinica.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.btnClinica.ForeColor = System.Drawing.Color.White;
             this.btnClinica.Image = global::capaPresentacion.Properties.Resources.estetoscopio_01;
             this.btnClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -658,7 +779,7 @@
             this.btnLaboratorio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLaboratorio.FlatAppearance.BorderSize = 0;
             this.btnLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLaboratorio.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaboratorio.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.btnLaboratorio.ForeColor = System.Drawing.Color.White;
             this.btnLaboratorio.Image = global::capaPresentacion.Properties.Resources.Microscopio_01;
             this.btnLaboratorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -722,6 +843,59 @@
             this.statusLabelErrores.Size = new System.Drawing.Size(12, 17);
             this.statusLabelErrores.Text = "-";
             // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.cboDestino);
+            this.panel10.Controls.Add(this.label3);
+            this.panel10.Controls.Add(this.txtMensaje);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(0, 306);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(247, 180);
+            this.panel10.TabIndex = 1;
+            // 
+            // txtMensaje
+            // 
+            this.txtMensaje.Location = new System.Drawing.Point(0, 65);
+            this.txtMensaje.Multiline = true;
+            this.txtMensaje.Name = "txtMensaje";
+            this.txtMensaje.Size = new System.Drawing.Size(246, 90);
+            this.txtMensaje.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(125, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 28);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Mensajes";
+            // 
+            // cboDestino
+            // 
+            this.cboDestino.FormattingEnabled = true;
+            this.cboDestino.Location = new System.Drawing.Point(0, 38);
+            this.cboDestino.Name = "cboDestino";
+            this.cboDestino.Size = new System.Drawing.Size(246, 21);
+            this.cboDestino.TabIndex = 3;
+            // 
+            // Enviar
+            // 
+            this.Enviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.Enviar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Enviar.FlatAppearance.BorderSize = 0;
+            this.Enviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Enviar.Location = new System.Drawing.Point(0, 544);
+            this.Enviar.Name = "Enviar";
+            this.Enviar.Size = new System.Drawing.Size(250, 23);
+            this.Enviar.TabIndex = 5;
+            this.Enviar.Text = "Enviar";
+            this.Enviar.UseVisualStyleBackColor = false;
+            // 
             // MenuVertical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,10 +917,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menuOpciones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.contNotificicaciones.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
             this.panelContTemas.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.contNotificicaciones.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.contenedor.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -762,6 +942,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BarraDeEstado.ResumeLayout(false);
             this.BarraDeEstado.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -801,7 +983,6 @@
         private System.Windows.Forms.Button btnTemas;
         private System.Windows.Forms.Button btnNotificaciones;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button btnPerfil;
         private System.Windows.Forms.Button btnMiPerfil;
         private System.Windows.Forms.ListBox listNotificaciones;
         private System.Windows.Forms.Panel panel13;
@@ -814,7 +995,21 @@
         private System.Windows.Forms.Button btnClinicaDoctores;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnConsultas;
+        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPerfil;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMensaje;
+        private System.Windows.Forms.ComboBox cboDestino;
+        private System.Windows.Forms.Button Enviar;
     }
 }
 
