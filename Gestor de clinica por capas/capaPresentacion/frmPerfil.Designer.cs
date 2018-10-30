@@ -28,47 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnRestaurar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbUsuario = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtContra = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtDui = new System.Windows.Forms.TextBox();
+            this.btnFoto = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboGenero = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtComprobarcontra = new System.Windows.Forms.TextBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.lblClinica = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
             this.SuspendLayout();
             // 
-            // button3
+            // btnRestaurar
             // 
-            this.button3.BackColor = System.Drawing.Color.Teal;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 570);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(1154, 40);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Actualizar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnRestaurar.BackColor = System.Drawing.Color.Teal;
+            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnRestaurar.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurar.ForeColor = System.Drawing.Color.White;
+            this.btnRestaurar.Location = new System.Drawing.Point(0, 616);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(1154, 40);
+            this.btnRestaurar.TabIndex = 11;
+            this.btnRestaurar.Text = "Restaurar Valores";
+            this.btnRestaurar.UseVisualStyleBackColor = false;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
             // panel1
             // 
@@ -91,15 +98,15 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Doctor";
             // 
-            // pictureBox1
+            // pbUsuario
             // 
-            this.pictureBox1.Image = global::capaPresentacion.Properties.Resources.Doctor;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 186);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
+            this.pbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbUsuario.Location = new System.Drawing.Point(30, 50);
+            this.pbUsuario.Name = "pbUsuario";
+            this.pbUsuario.Size = new System.Drawing.Size(141, 186);
+            this.pbUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUsuario.TabIndex = 29;
+            this.pbUsuario.TabStop = false;
             // 
             // label2
             // 
@@ -114,16 +121,16 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Usuario";
             // 
-            // label3
+            // lblID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(194, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Gregory.House";
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblID.ForeColor = System.Drawing.Color.Black;
+            this.lblID.Location = new System.Drawing.Point(194, 61);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(44, 13);
+            this.lblID.TabIndex = 28;
+            this.lblID.Text = "Nombre";
             // 
             // label4
             // 
@@ -136,14 +143,14 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "Nombre";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(177, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(965, 20);
-            this.textBox1.TabIndex = 27;
+            this.txtNombre.Location = new System.Drawing.Point(177, 113);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(965, 20);
+            this.txtNombre.TabIndex = 1;
             // 
             // label5
             // 
@@ -156,14 +163,14 @@
             this.label5.TabIndex = 31;
             this.label5.Text = "Apellido";
             // 
-            // textBox2
+            // txtApellido
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(177, 156);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(965, 20);
-            this.textBox2.TabIndex = 30;
+            this.txtApellido.Location = new System.Drawing.Point(177, 156);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(965, 20);
+            this.txtApellido.TabIndex = 2;
             // 
             // label6
             // 
@@ -172,203 +179,279 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(179, 179);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 17);
+            this.label6.Size = new System.Drawing.Size(90, 17);
             this.label6.TabIndex = 33;
-            this.label6.Text = "Contraseña";
+            this.label6.Text = "Contraseña*";
             // 
-            // textBox3
+            // txtContra
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtContra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(177, 199);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(965, 20);
-            this.textBox3.TabIndex = 32;
+            this.txtContra.Location = new System.Drawing.Point(177, 199);
+            this.txtContra.Name = "txtContra";
+            this.txtContra.Size = new System.Drawing.Size(965, 20);
+            this.txtContra.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(505, 44);
+            this.label7.Location = new System.Drawing.Point(385, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 17);
             this.label7.TabIndex = 35;
             this.label7.Text = "Rol";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label8
+            // lblRol
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(517, 61);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 13);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Doctor";
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblRol.ForeColor = System.Drawing.Color.Black;
+            this.lblRol.Location = new System.Drawing.Point(397, 67);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(39, 13);
+            this.lblRol.TabIndex = 36;
+            this.lblRol.Text = "Doctor";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(179, 222);
+            this.label9.Location = new System.Drawing.Point(27, 274);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 17);
             this.label9.TabIndex = 38;
             this.label9.Text = "Teléfono";
             // 
-            // textBox4
+            // txtTelefono
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(177, 242);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(965, 20);
-            this.textBox4.TabIndex = 37;
+            this.txtTelefono.Location = new System.Drawing.Point(30, 294);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(1112, 20);
+            this.txtTelefono.TabIndex = 6;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(27, 265);
+            this.label10.Location = new System.Drawing.Point(27, 318);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 17);
             this.label10.TabIndex = 40;
             this.label10.Text = "DUI";
             // 
-            // textBox5
+            // txtDui
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtDui.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(25, 285);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(1117, 20);
-            this.textBox5.TabIndex = 39;
+            this.txtDui.Location = new System.Drawing.Point(30, 338);
+            this.txtDui.Name = "txtDui";
+            this.txtDui.Size = new System.Drawing.Size(1112, 20);
+            this.txtDui.TabIndex = 7;
             // 
-            // button4
+            // btnFoto
             // 
-            this.button4.BackColor = System.Drawing.Color.Teal;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(30, 233);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 29);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "Cargar Foto";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnFoto.BackColor = System.Drawing.Color.Teal;
+            this.btnFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFoto.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFoto.ForeColor = System.Drawing.Color.White;
+            this.btnFoto.Location = new System.Drawing.Point(30, 233);
+            this.btnFoto.Name = "btnFoto";
+            this.btnFoto.Size = new System.Drawing.Size(141, 29);
+            this.btnFoto.TabIndex = 5;
+            this.btnFoto.Text = "Cargar Foto";
+            this.btnFoto.UseVisualStyleBackColor = false;
+            this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(27, 308);
+            this.label11.Location = new System.Drawing.Point(27, 361);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 17);
             this.label11.TabIndex = 42;
             this.label11.Text = "Género";
             // 
-            // comboBox2
+            // cboGenero
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cboGenero.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Laboratorio",
-            "Clinica General"});
-            this.comboBox2.Location = new System.Drawing.Point(25, 328);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(1117, 21);
-            this.comboBox2.TabIndex = 43;
+            this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGenero.FormattingEnabled = true;
+            this.cboGenero.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.cboGenero.Location = new System.Drawing.Point(30, 381);
+            this.cboGenero.Name = "cboGenero";
+            this.cboGenero.Size = new System.Drawing.Size(1112, 21);
+            this.cboGenero.TabIndex = 8;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(27, 352);
+            this.label12.Location = new System.Drawing.Point(27, 413);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 17);
             this.label12.TabIndex = 45;
             this.label12.Text = "Dirección";
             // 
-            // textBox6
+            // txtDireccion
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(25, 372);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(1117, 192);
-            this.textBox6.TabIndex = 44;
+            this.txtDireccion.Location = new System.Drawing.Point(30, 433);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(1112, 119);
+            this.txtDireccion.TabIndex = 9;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(179, 222);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(171, 17);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Comprobar Contraseña*";
+            // 
+            // txtComprobarcontra
+            // 
+            this.txtComprobarcontra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtComprobarcontra.Location = new System.Drawing.Point(177, 242);
+            this.txtComprobarcontra.Name = "txtComprobarcontra";
+            this.txtComprobarcontra.Size = new System.Drawing.Size(965, 20);
+            this.txtComprobarcontra.TabIndex = 4;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.Teal;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(0, 576);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(1154, 40);
+            this.btnActualizar.TabIndex = 10;
+            this.btnActualizar.Text = "Guardar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // lblClinica
+            // 
+            this.lblClinica.AutoSize = true;
+            this.lblClinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblClinica.ForeColor = System.Drawing.Color.Black;
+            this.lblClinica.Location = new System.Drawing.Point(606, 67);
+            this.lblClinica.Name = "lblClinica";
+            this.lblClinica.Size = new System.Drawing.Size(60, 13);
+            this.lblClinica.TabIndex = 50;
+            this.lblClinica.Text = "Laboratorio";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(594, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 17);
+            this.label8.TabIndex = 49;
+            this.label8.Text = "Clinica";
             // 
             // frmPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 610);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox4);
+            this.ClientSize = new System.Drawing.Size(1154, 656);
+            this.Controls.Add(this.lblClinica);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtComprobarcontra);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.cboGenero);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.btnRestaurar);
+            this.Controls.Add(this.btnFoto);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtDui);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.lblRol);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtContra);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.pbUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPerfil";
             this.Text = "frmPerfil";
+            this.Load += new System.EventHandler(this.frmPerfil_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbUsuario;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtDui;
+        private System.Windows.Forms.Button btnFoto;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboGenero;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtComprobarcontra;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Label lblClinica;
+        private System.Windows.Forms.Label label8;
     }
 }

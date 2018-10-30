@@ -13,12 +13,10 @@ namespace capaDatosNegocios
     public class Notificaciones
     {
         private Conexion Conexion = new Conexion();
-        private SqlDataReader leer;
-
         int id;
         string emisor;
         string receptor;
-        string fk_emisor;
+        string fk_receptor;
         string mensaje;
 
         public int Id1
@@ -57,16 +55,16 @@ namespace capaDatosNegocios
                 receptor = value;
             }
         }
-        public string Fk_emisor1
+        public string Fk_receptor1
         {
             get
             {
-                return fk_emisor;
+                return fk_receptor;
             }
 
             set
             {
-                fk_emisor = value;
+                fk_receptor = value;
             }
         }
 
@@ -107,12 +105,12 @@ namespace capaDatosNegocios
         //    borrarNotificacion = objDato.borrarNotificacion(Id1);
         //    return borrarNotificacion;
         //}
-
+        /*
         public List<object> verNotificacion()
         {
             SqlCommand comando = new SqlCommand("clinicas.verNotificacion", Conexion.AbrirConexion());
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@id_empleado", Fk_emisor1);
+            comando.Parameters.AddWithValue("@id_usuario", Fk_emisor);
             leer = comando.ExecuteReader();
             List<object> listaDeNotificaciones = new List<object>();
             foreach (string notificacion in leer) {
@@ -140,6 +138,6 @@ namespace capaDatosNegocios
             comando.Parameters.AddWithValue("@id_notificacion", idNotificacion);
             leer = comando.ExecuteReader();
             return leer;
-        }
+        }*/
     }
 }

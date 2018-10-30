@@ -38,15 +38,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTemas = new System.Windows.Forms.Button();
             this.btnNotificaciones = new System.Windows.Forms.Button();
+            this.contNotificicaciones = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.listNotificaciones = new System.Windows.Forms.ListBox();
             this.panelContTemas = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
             this.btnMiPerfil = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.contNotificicaciones = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.listNotificaciones = new System.Windows.Forms.ListBox();
             this.contenedor = new System.Windows.Forms.Panel();
             this.panelCont = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -83,10 +83,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuOpciones.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelContTemas.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.contNotificicaciones.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panelContTemas.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.contenedor.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FotoPerfil)).BeginInit();
@@ -171,8 +171,8 @@
             // 
             this.menuOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(81)))), ((int)(((byte)(112)))));
             this.menuOpciones.Controls.Add(this.panel2);
-            this.menuOpciones.Controls.Add(this.panelContTemas);
             this.menuOpciones.Controls.Add(this.contNotificicaciones);
+            this.menuOpciones.Controls.Add(this.panelContTemas);
             this.menuOpciones.Dock = System.Windows.Forms.DockStyle.Right;
             this.menuOpciones.Location = new System.Drawing.Point(770, 0);
             this.menuOpciones.Name = "menuOpciones";
@@ -216,6 +216,40 @@
             this.btnNotificaciones.Text = "Notificaciones";
             this.btnNotificaciones.UseVisualStyleBackColor = false;
             this.btnNotificaciones.Click += new System.EventHandler(this.btnNotificaciones_Click);
+            // 
+            // contNotificicaciones
+            // 
+            this.contNotificicaciones.Controls.Add(this.panel13);
+            this.contNotificicaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contNotificicaciones.Location = new System.Drawing.Point(0, 0);
+            this.contNotificicaciones.Name = "contNotificicaciones";
+            this.contNotificicaciones.Size = new System.Drawing.Size(250, 567);
+            this.contNotificicaciones.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel13.Controls.Add(this.listNotificaciones);
+            this.panel13.Location = new System.Drawing.Point(0, 51);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(247, 429);
+            this.panel13.TabIndex = 1;
+            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
+            // 
+            // listNotificaciones
+            // 
+            this.listNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(81)))), ((int)(((byte)(112)))));
+            this.listNotificaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listNotificaciones.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listNotificaciones.ForeColor = System.Drawing.Color.White;
+            this.listNotificaciones.FormattingEnabled = true;
+            this.listNotificaciones.ItemHeight = 15;
+            this.listNotificaciones.Location = new System.Drawing.Point(0, 0);
+            this.listNotificaciones.Name = "listNotificaciones";
+            this.listNotificaciones.Size = new System.Drawing.Size(247, 435);
+            this.listNotificaciones.TabIndex = 0;
             // 
             // panelContTemas
             // 
@@ -296,40 +330,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(250, 21);
             this.panel8.TabIndex = 5;
-            // 
-            // contNotificicaciones
-            // 
-            this.contNotificicaciones.Controls.Add(this.panel13);
-            this.contNotificicaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contNotificicaciones.Location = new System.Drawing.Point(0, 0);
-            this.contNotificicaciones.Name = "contNotificicaciones";
-            this.contNotificicaciones.Size = new System.Drawing.Size(250, 567);
-            this.contNotificicaciones.TabIndex = 1;
-            // 
-            // panel13
-            // 
-            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel13.Controls.Add(this.listNotificaciones);
-            this.panel13.Location = new System.Drawing.Point(0, 51);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(247, 429);
-            this.panel13.TabIndex = 1;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
-            // 
-            // listNotificaciones
-            // 
-            this.listNotificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(81)))), ((int)(((byte)(112)))));
-            this.listNotificaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listNotificaciones.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listNotificaciones.ForeColor = System.Drawing.Color.White;
-            this.listNotificaciones.FormattingEnabled = true;
-            this.listNotificaciones.ItemHeight = 15;
-            this.listNotificaciones.Location = new System.Drawing.Point(0, 0);
-            this.listNotificaciones.Name = "listNotificaciones";
-            this.listNotificaciones.Size = new System.Drawing.Size(247, 435);
-            this.listNotificaciones.TabIndex = 0;
             // 
             // contenedor
             // 
@@ -743,10 +743,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menuOpciones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panelContTemas.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.contNotificicaciones.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
+            this.panelContTemas.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.contenedor.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -5,6 +5,8 @@
 	4- al ejecutar este codigo, salir de sql server management e iniciarlo de nuevo pero con login adminClinica y password admin123
 	5- se crearan procedimientos almacenados para hacer las peticiones de forma mas rapida
 */
+
+
 use master
 go
 
@@ -69,7 +71,7 @@ create table doctor
 (Id_Doctor int not null identity primary key,--con identity no es necesario estarle poniendo datos en la primary key, el solo le pone datos
 especialidad varchar(255),--especifica a que se dedica, si es odontologo, laboratirista, ginecologo, tecnologo, etc...
 descripcion_Personal varchar(255), --informacion extra que quiera aportar el doctor
-Fk_IDUsuario varchar(50) not null foreign key (Fk_IDUsuario) references usuario(id_usuario) -- a que clinica pertenece el doc
+Fk_IDUsuario varchar(50) unique not null foreign key (Fk_IDUsuario) references usuario(id_usuario) -- a que clinica pertenece el doc
 )
 GO
 
@@ -121,6 +123,7 @@ formulario varchar(255),
 fk_rol int foreign key (fk_rol) references rol(idRol)
 )
 GO
+
 --creando Login administrador
 	--el administrador nos servirá para logearnos en la base de datos y no nos de error al conectarnos en el programa
 Create Login adminClinica
@@ -146,7 +149,7 @@ ALTER SCHEMA clinicas TRANSFER rol;
 GO
 --Creando usuario administrador
 --creando clinicas
-INSERT INTO clinicas.clinica Values('admin'),('General'),('Laboratorio'),('Odontologia');
+INSERT INTO clinicas.clinica Values('admin'),('General'),('Laboratorio');
 GO
 	--Creo un usuario administrador en la base de datos, siempre debe haber alguien para ingresar datos en el programa
 INSERT INTO clinicas.usuario values('admin0','admin123', 'nombreAdmin','Apellidoadmin','DirAd','0','0','m',null,1)
@@ -168,17 +171,18 @@ GRANT exec ON SCHEMA :: clinicas to adminClinica with GRANT OPTION;
 GO
 
 -------------Procedimientos almacenados
+
 	--Los procedimientos almacenados ayudan a hacer las peticiones mas rapidas en el programa 
 	--procedimiento para iniciar sesion
 
-create procedure clinicas.SPIniciarSesion(
-	@usuario varchar(50),
-	@pass varchar(50)
-)
-as
+	create procedure clinicas.SPIniciarSesion(
+		@usuario varchar(50),
+		@pass varchar(50)
+	)
+	as
 		select * from clinicas.usuario
 		where id_usuario=@usuario and pass = @pass
-GO
+	GO
 
 	--creando mantenimiento para clinica
 
@@ -223,28 +227,42 @@ GO
 
 	--Creando mantenimiento Paciente
 
-	--Creando mantenimiento antecedentes de pacientes
 
-	--creando mantenimiento empleados
 
-	--creando mantenimiento notificaciones
-
-		create procedure clinicas.verNotificacion(
+	--creando mantenimiento usuarios
+		create procedure clinicas.verUsuario(
 			@id_usuario varchar(50)--//para verificar de quien es el mensaje
 		)
 		as
-			select * from clinicas.notificacion
-			where FK_IDusuario = @id_usuario
+			select * from clinicas.usuario
+			inner join clinicas.clinica On clinicas.usuario.Fk_IDClinica = clinicas.clinica.ID_Clinica
+			where ID_usuario = @id_usuario;
+			
 		GO
 
-		insert into clinicas.notificacion values('administrador','--Hola esta es una prueva de notificacion gracias!','admin0')
+		create procedure clinicas.modificarUsuario(
+			@id_usuario varchar(50),
+			@Pass varchar(50) ,
+			@Nombre varchar(50),
+			@Apellido varchar(50),
+			@Direccion varchar(100),
+			@Telefono varchar(9),
+			@Dui varchar(14),
+			@Genero varchar (15),
+			@fotografia varchar(max)
+			)
+		as
+			UPDATE clinicas.usuario
+			set Pass = @Pass, Nombre = @Nombre, Apellido = @Apellido,Direccion = @Direccion, Telefono = @Telefono,Dui = @Dui,Genero=@Genero, fotografia = @fotografia
+			Where id_usuario = @id_usuario;
 		GO
-		insert into clinicas.notificacion values('administrador','--gracias! 2','admin0')
+			
+
+	--creando mantenimiento notificaciones
+
+		
 		GO
-		insert into clinicas.notificacion values('administrador','--jeje 2','admin0')
-		GO
-		exec clinicas.verNotificacion @id_usuario = 'admin0'
-		GO
+		
 		create procedure clinicas.enviarNotificacion(
 			
 			@emisor varchar(50),
@@ -264,8 +282,50 @@ GO
 			delete from clinicas.notificacion
 			where id_notificacion = @id_notificacion;
 		GO
+		create procedure clinicas.verNotificacion(
+			@id_usuario varchar(50)--//para verificar de quien es el mensaje
+		)
+		as
+			select * from clinicas.notificacion
+			where FK_IDusuario = @id_usuario
+		GO
 
+		exec clinicas.verNotificacion @id_usuario = "admin0";
+		GO
 	--creando mantenimiento doctor
+		create procedure clinicas.insertarDoctor(
+			@especialidad varchar(255),
+			@descripcion_Personal varchar(255), 
+			@Fk_IDUsuario varchar(50) 
+		)
+		as
+			insert into clinicas.doctor
+			values(@especialidad,@descripcion_Personal,@Fk_IDUsuario);
+		GO
+
+		create procedure clinicas.verDoctores(
+			@Fk_IDUsuario varchar(50) 
+		)
+		as
+			SELECT * FROM clinicas.doctor;
+		GO
+
+		create procedure clinicas.borrarDoctores(
+			@id_usuario varchar(50) 
+		)
+		as
+		DELETE FROM clinicas.doctor
+		WHERE Fk_IDUsuario = @id_usuario;
+			
+		GO
+
+		create procedure clinicas.BuscarDoctor(
+			@Fk_IDUsuario varchar(50) 
+		)
+		as
+			SELECT * FROM clinicas.doctor
+			WHERE FK_IDusuario LIKE @Fk_IDUsuario ;
+		GO
 
 	--creando mantenimiento laboratorio
 
@@ -277,3 +337,14 @@ GO
 
 	--creando mantenimiento tipo de estudios
 
+	
+	--ejecuciones
+
+	
+	exec clinicas.verNotificacion @id_usuario = 'admin0';
+	
+	exec clinicas.BuscarDoctor @Fk_IDUsuario = 'admin0';
+
+	exec clinicas.verUsuario @id_usuario = 'admin0';
+
+	

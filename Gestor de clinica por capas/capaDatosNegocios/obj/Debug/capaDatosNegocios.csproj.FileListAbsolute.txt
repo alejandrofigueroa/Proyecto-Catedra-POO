@@ -9,3 +9,8 @@ C:\Users\Jeffry\Documents\Mis Proyectos\Proyecto-de-catedra\Gestor de clinica po
 C:\Users\Jeffry\Documents\Mis Proyectos\Proyecto-de-catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.csproj.CoreCompileInputs.cache
 C:\Users\Jeffry\Documents\Mis Proyectos\Proyecto-de-catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.dll
 C:\Users\Jeffry\Documents\Mis Proyectos\Proyecto-de-catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.pdb
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\bin\Debug\capaDatosNegocios.dll
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\bin\Debug\capaDatosNegocios.pdb
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.csproj.CoreCompileInputs.cache
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.dll
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.pdb

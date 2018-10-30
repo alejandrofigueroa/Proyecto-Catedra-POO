@@ -15,10 +15,23 @@ namespace capaDatosNegocios
         private Conexion Conexion = new Conexion();
         private SqlDataReader leer;
 
+        private int id_doctor;
         private string especialidad;
         private string descripcion;
         private string fk_empleado;
 
+        public int Id_doctor
+        {
+            get
+            {
+                return id_doctor;
+            }
+
+            set
+            {
+                id_doctor = value;
+            }
+        }
         public string Especialidad
         {
             get

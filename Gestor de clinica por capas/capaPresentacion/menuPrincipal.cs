@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capaDatosNegocios;
+using System.IO;
 
 namespace capaPresentacion
 {
@@ -22,13 +23,36 @@ namespace capaPresentacion
         public string rolSesion;
         public string clinicasesion;
         public static string errores;// con esta variable pueden poner errores en la barra de estado del menu
-        
+        public static Image fotoPerfil;
+
+        storedProcedure sp = new storedProcedure();
+
         Timer t = new Timer();
         public MenuVertical()
         {
             InitializeComponent();
+            cargarVariables();
+            FotoPerfil.Image = fotoPerfil;
+        }
 
-            //me quedé aqui para mandar a llamar las variables de sesion
+        public void cargarVariables() {
+            try
+            {
+                string[] docParametros = new string[1];//creamos un string para los parametros
+                docParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";//guardamos los parametros que queremos, no le ponemos las comillas simples al parametro, dará error
+                List<object[]> usuarios = sp.lt(docParametros, "verUsuario");//mandamos a llamar la clase sp con la funcion lt
+
+                foreach (object[] usuario in usuarios)//cargamos los datos en nuestra lista
+                {
+                    var array = Convert.FromBase64String(usuario[8].ToString());
+                    using (var ms = new MemoryStream(array))
+                    {
+                        fotoPerfil = Image.FromStream(ms);
+                    }
+                }
+            }catch{
+
+            }
         }
 
         private void btnSlide_Click(object sender, EventArgs e)
@@ -109,26 +133,15 @@ namespace capaPresentacion
             panelContTemas.Visible = false;
             contNotificicaciones.Visible = true;
 
+            string[] notiParametros = new string[1];
             listNotificaciones.Items.Clear();
-            //el siguiente bucle comentado puede ser reutilizado
-            //creo un objeto de tipo CNNotificacion(clase que se crea en la capa de negocios)
-            Notificaciones objNotificacion = new Notificaciones();
-            //Creo un objeto tipo lista, donde almacenaré lo que me retorna el procedimiento
-            List<object> verNotificacion = new List<object>();
-            //asigno variables al objeto (getters y setters creados en la clase de negocios) esto servirá para saber de quien es la notificacion
-            objNotificacion.Fk_emisor1 = MenuVertical.usuarioSesion;
-            //mando a llamar el procedimiento y lo almaceno en verNotificacion(el que cree arriba)
-            verNotificacion = objNotificacion.verNotificacion();
-            try
-            {
-                verNotificacion.Reverse(); //para invertir el orden, ya que las ultimas notificaciones deben mostrarse de primero en la lista
-                foreach (object[] datos in verNotificacion)
-                {//lleno la lista
-                    listNotificaciones.Items.Add("[" + datos[1].ToString().Replace(" ", "") + "]--" + datos[3].ToString());//construllo el formato de la notificacion
-                }
-            }
-            catch (Exception ) {
+            notiParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";
 
+            List<object[]>datos = sp.lt(notiParametros, "verNotificacion");
+
+            foreach (object[] notificacion in datos)
+            {
+                listNotificaciones.Items.Add("["+notificacion[1].ToString()+"] -"+notificacion[2].ToString());
             }
 
             
@@ -158,13 +171,17 @@ namespace capaPresentacion
             }
             else
             {
-                if ((hh - 12) < 10)
+                if ((12 - hh) < 0)
                 {
-                    time += "0" + (hh - 12);
+                    time += "0" + (hh);
+                }
+                if ((12 - hh ) > 0)
+                {
+                    time += (hh);
                 }
                 else
                 {
-                    time += (hh - 12);
+                    time += (hh);
                 }
             }
             time += ":";
