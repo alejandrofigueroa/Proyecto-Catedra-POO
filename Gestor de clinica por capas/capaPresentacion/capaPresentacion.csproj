@@ -79,6 +79,12 @@
     <Compile Include="menuPrincipal.designer.cs">
       <DependentUpon>menuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="paciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paciente.Designer.cs">
+      <DependentUpon>paciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashScreen.cs">
@@ -102,6 +108,9 @@
     <EmbeddedResource Include="menuPrincipal.resx">
       <DependentUpon>menuPrincipal.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paciente.resx">
+      <DependentUpon>paciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

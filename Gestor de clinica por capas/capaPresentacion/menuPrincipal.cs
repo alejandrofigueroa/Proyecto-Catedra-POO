@@ -128,20 +128,26 @@ namespace capaPresentacion
 
         private void btnNotificaciones_Click(object sender, EventArgs e)
         {
-            btnTemas.BackColor = Color.FromArgb(41, 66, 91);
-            btnNotificaciones.BackColor = Color.FromArgb(50, 81, 112);
-            panelContTemas.Visible = false;
-            contNotificicaciones.Visible = true;
-
-            string[] notiParametros = new string[1];
-            listNotificaciones.Items.Clear();
-            notiParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";
-
-            List<object[]>datos = sp.lt(notiParametros, "verNotificacion");
-
-            foreach (object[] notificacion in datos)
+            try
             {
-                listNotificaciones.Items.Add("["+notificacion[1].ToString()+"] -"+notificacion[2].ToString());
+                btnTemas.BackColor = Color.FromArgb(41, 66, 91);
+                btnNotificaciones.BackColor = Color.FromArgb(50, 81, 112);
+                panelContTemas.Visible = false;
+                contNotificicaciones.Visible = true;
+
+                string[] notiParametros = new string[1];
+                listNotificaciones.Items.Clear();
+                notiParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";
+
+                List<object[]> datos = sp.lt(notiParametros, "verNotificacion");
+
+                foreach (object[] notificacion in datos)
+                {
+                    listNotificaciones.Items.Add("[" + notificacion[1].ToString() + "] -" + notificacion[2].ToString());
+                }
+            }catch(Exception ex)
+            {
+
             }
 
             
@@ -377,6 +383,13 @@ namespace capaPresentacion
         {
             aboutUs creditos = new aboutUs();
             AbrirFormInPanel(creditos);
+            this.panelCont.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmPaciente frmPaciente = new frmPaciente();
+            AbrirFormInPanel(frmPaciente);
             this.panelCont.Show();
         }
     }

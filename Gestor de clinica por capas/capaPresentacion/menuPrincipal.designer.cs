@@ -478,7 +478,7 @@
             this.panelBotonClinica.Controls.Add(this.btnClinicaDoctores);
             this.panelBotonClinica.Controls.Add(this.btnClinica);
             this.panelBotonClinica.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBotonClinica.Location = new System.Drawing.Point(0, 155);
+            this.panelBotonClinica.Location = new System.Drawing.Point(0, 154);
             this.panelBotonClinica.Name = "panelBotonClinica";
             this.panelBotonClinica.Size = new System.Drawing.Size(250, 50);
             this.panelBotonClinica.TabIndex = 5;
@@ -553,7 +553,7 @@
             this.btnClinica.ForeColor = System.Drawing.Color.White;
             this.btnClinica.Image = global::capaPresentacion.Properties.Resources.estetoscopio_01;
             this.btnClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClinica.Location = new System.Drawing.Point(0, 2);
+            this.btnClinica.Location = new System.Drawing.Point(0, 3);
             this.btnClinica.Name = "btnClinica";
             this.btnClinica.Size = new System.Drawing.Size(250, 50);
             this.btnClinica.TabIndex = 4;
@@ -572,7 +572,7 @@
             this.PanelBotonLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBotonLaboratorio.Location = new System.Drawing.Point(0, 100);
             this.PanelBotonLaboratorio.Name = "PanelBotonLaboratorio";
-            this.PanelBotonLaboratorio.Size = new System.Drawing.Size(250, 55);
+            this.PanelBotonLaboratorio.Size = new System.Drawing.Size(250, 54);
             this.PanelBotonLaboratorio.TabIndex = 0;
             // 
             // button9
@@ -619,6 +619,7 @@
             this.button8.TabIndex = 8;
             this.button8.Text = " Pacientes";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // btnCitas
             // 
