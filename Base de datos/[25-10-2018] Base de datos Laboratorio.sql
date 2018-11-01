@@ -39,7 +39,18 @@ Fk_IDClinica int not null foreign key (Fk_IDClinica) references Clinica(id_Clini
 )
 GO
 
+create table rol(
+idRol int identity not null primary key,
+nombreRol varchar(255)
+)
+GO
 
+create table Permiso(
+idPermisos int identity not null primary key,
+formulario varchar(255),
+fk_rol int foreign key (fk_rol) references rol(idRol)
+)
+GO
 
 CREATE TABLE usuario-- se creó para evitar redundancia de datos entre doctores y empleados, ya que comparten datos en comun
 (
@@ -52,6 +63,7 @@ Telefono varchar(9),
 Dui varchar(14),
 Genero varchar (15),-- si es hombre o mujer
 fotografia varchar(max),
+FK_Rol int not null foreign key (FK_Rol) references	Rol(idRol),
 Fk_IDClinica int not null foreign key (Fk_IDClinica) references Clinica(id_Clinica) -- a que clinica pertenece el empleado
 )
 GO
@@ -110,19 +122,6 @@ FK_IDPaciente int not null foreign key (fk_IDPaciente) references Paciente(ID_Pa
 )
 GO
 
-create table rol(
-idRol int identity not null primary key,
-nombreRol varchar(255),
-fk_Usuario varchar(50) foreign key (fk_Usuario) references Usuario(ID_Usuario)
-)
-GO
-
-create table Permiso(
-idPermisos int identity not null primary key,
-formulario varchar(255),
-fk_rol int foreign key (fk_rol) references rol(idRol)
-)
-GO
 
 --creando Login administrador
 	--el administrador nos servirá para logearnos en la base de datos y no nos de error al conectarnos en el programa
@@ -151,10 +150,21 @@ GO
 --creando clinicas
 INSERT INTO clinicas.clinica Values('admin'),('General'),('Laboratorio');
 GO
+
+INSERT INTO clinicas.rol Values('admin'),('Doctores'),('Secretarios');
+INSERT INTO clinicas.Permiso values('Doctores',1),('Pacientes',1),('Citas',1),('Estudios',1),('Usuarios',1);
+INSERT INTO clinicas.Permiso values('Pacientes',2),('Citas',2),('Estudios',2);
+INSERT INTO clinicas.Permiso values('Pacientes',3),('Citas',3);
+
 	--Creo un usuario administrador en la base de datos, siempre debe haber alguien para ingresar datos en el programa
-INSERT INTO clinicas.usuario values('admin0','admin123', 'nombreAdmin','Apellidoadmin','DirAd','0','0','m',null,1)
+INSERT INTO clinicas.usuario values('admin0','admin123', 'nombreAdmin','Apellidoadmin','DirAd','0','0','m',null,1,1)
+INSERT INTO clinicas.usuario values('admin1','admin123', 'nombreAdmin','Apellidoadmin','DirAd','0','0','m',null,2,2)
+INSERT INTO clinicas.usuario values('admin2','admin123', 'nombreAdmin','Apellidoadmin','DirAd','0','0','m',null,3,3)
 select * from clinicas.usuario;
 GO
+select * from clinicas.clinica;
+select * from clinicas.rol;
+
 
 --creamos un usuario para tener derecho a interactuar con la base de datos
 CREATE USER adminClinica FOR LOGIN adminClinica
@@ -333,18 +343,25 @@ GO
 
 	--creando mantenimiento consulta
 
-	--creando mantenimiento dental
-
 	--creando mantenimiento tipo de estudios
 
+	create procedure clinicas.verPermisos(
+	@ID_rol int
+	)
+	as
+	select * from clinicas.Permiso
+	WHERE fk_rol = @ID_rol;
+	GO
 	
 	--ejecuciones
-
+	select *  from clinicas.clinica
 	
 	exec clinicas.verNotificacion @id_usuario = 'admin0';
-	
+	GO
 	exec clinicas.BuscarDoctor @Fk_IDUsuario = 'admin0';
-
+	GO
 	exec clinicas.verUsuario @id_usuario = 'admin0';
+	GO
+	exec clinicas.verPermisos @ID_rol = 3;
 
 	

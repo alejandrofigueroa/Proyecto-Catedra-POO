@@ -12,7 +12,6 @@ namespace capaDatosNegocios
 {
     public class Notificaciones
     {
-        private Conexion Conexion = new Conexion();
         int id;
         string emisor;
         string receptor;
@@ -80,64 +79,5 @@ namespace capaDatosNegocios
                 mensaje = value;
             }
         }
-        
-
-        //constructor
-        //public CNNotificacion() { }
-        //funciones o metodos
-        //public SqlDataReader verNotificacion()
-        //{
-        //    SqlDataReader verNotificacion;
-        //    verNotificacion = objDato.verNotificacion(Fk_emisor1);
-        //    return verNotificacion;
-        //}
-
-        //public SqlDataReader enviarNotificacion()
-        //{
-        //    SqlDataReader enviarNotificacion;
-        //    enviarNotificacion = objDato.enviarNotificacion(Receptor1, Emisor1, Mensaje1, Receptor1);
-        //    return enviarNotificacion;
-        //}
-
-        //public SqlDataReader borrarNotificacion()
-        //{
-        //    SqlDataReader borrarNotificacion;
-        //    borrarNotificacion = objDato.borrarNotificacion(Id1);
-        //    return borrarNotificacion;
-        //}
-        /*
-        public List<object> verNotificacion()
-        {
-            SqlCommand comando = new SqlCommand("clinicas.verNotificacion", Conexion.AbrirConexion());
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@id_usuario", Fk_emisor);
-            leer = comando.ExecuteReader();
-            List<object> listaDeNotificaciones = new List<object>();
-            foreach (string notificacion in leer) {
-                listaDeNotificaciones.Add(notificacion);
-            }
-            return listaDeNotificaciones;
-        }
-
-        public SqlDataReader enviarNotificacion(string receptor, string emisor, string mensaje, string idReceptor)
-        {
-            SqlCommand comando = new SqlCommand("clinicas.enviarNotificacion", Conexion.AbrirConexion());
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@id_receptor", idReceptor);
-            comando.Parameters.AddWithValue("@receptor", receptor);
-            comando.Parameters.AddWithValue("@emisor", emisor);
-            comando.Parameters.AddWithValue("@mensaje", mensaje);
-            leer = comando.ExecuteReader();
-            return leer;
-        }
-
-        public SqlDataReader borrarNotificacion(int idNotificacion)
-        {
-            SqlCommand comando = new SqlCommand("clinicas.verNotificacion", Conexion.AbrirConexion());
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@id_notificacion", idNotificacion);
-            leer = comando.ExecuteReader();
-            return leer;
-        }*/
     }
 }

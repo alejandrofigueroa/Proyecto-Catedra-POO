@@ -74,6 +74,15 @@ namespace capaPresentacion
         private void frmDoctor_Load(object sender, EventArgs e)
         {
             string[] docParametros = new string[1];
+            docParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";//guardamos los parametros que queremos, no le ponemos las comillas simples al parametro, dará error
+
+            List<object[]> datos = sp.list("usuario");//mandamos a llamar la clase sp con la funcion lt
+
+            foreach (object[] usuario in datos)//cargamos los datos en nuestra lista
+            {
+                cboUsuario.Items.Add(usuario[0].ToString());
+            }
+
             actualizarDatos();
            
         }
@@ -125,7 +134,7 @@ namespace capaPresentacion
         private void cboUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] docParametros = new string[1];//creamos un string para los parametros
-            docParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";
+            docParametros[0] = "@id_usuario = " + cboUsuario.SelectedItem.ToString();
 
             try
             {
@@ -160,6 +169,11 @@ namespace capaPresentacion
             cboUsuario.SelectedItem = dvgDoctores.Rows[pocision].Cells[3].Value;
             txtEspecialidad.Text = dvgDoctores.Rows[pocision].Cells[2].Value.ToString();
             txtDPersonal.Text = txtEspecialidad.Text = dvgDoctores.Rows[pocision].Cells[1].Value.ToString(); ;
+        }
+
+        private void dvgDoctores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -211,9 +211,8 @@
             this.lblRol.ForeColor = System.Drawing.Color.Black;
             this.lblRol.Location = new System.Drawing.Point(397, 67);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(39, 13);
+            this.lblRol.Size = new System.Drawing.Size(0, 13);
             this.lblRol.TabIndex = 36;
-            this.lblRol.Text = "Doctor";
             // 
             // label9
             // 

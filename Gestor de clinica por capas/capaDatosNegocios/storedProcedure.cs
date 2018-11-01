@@ -16,6 +16,7 @@ namespace capaDatosNegocios
 
         public bool pb(string[] obj, string nsp) //sirve para insertar, actualizar y borrar, devuelve true o false
         {
+            Conexion.cerrarConexion();
             try
             {
                 SqlCommand comando = new SqlCommand("clinicas." + nsp, Conexion.cnn);//creamos el query, pero esta vez solo le enviaremos el procedimiento almacenado
@@ -45,6 +46,7 @@ namespace capaDatosNegocios
         {
             try
             {
+            Conexion.cerrarConexion();
                 SqlCommand comando = new SqlCommand("clinicas." + nsp, Conexion.cnn);//creamos el query, pero esta vez solo le enviaremos el procedimiento almacenado
 
                 comando.CommandType = CommandType.StoredProcedure;//especificamos que el comando con el query es de tipo procedimiento almacenado
@@ -92,6 +94,7 @@ namespace capaDatosNegocios
 
         public DataTable dt(string[] obj, string nsp)//sirve para obtener una tabla de la base de datos con valores especificos
         {
+            Conexion.cerrarConexion();
             DataTable table = new DataTable();//creamos una tabla vacia
 
             try
@@ -154,7 +157,36 @@ namespace capaDatosNegocios
         }
 
 
-        
+        public List<object[]> list(string tabla) //sirve obtener todos los datos una tabla de la base de datos para mostrarlos en un datagridview
+                                          //obtenemos como parametro la tabla que queremos consultar
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand("select * from " + tabla , Conexion.AbrirConexion());//creamos el query, pero esta vez solo le enviaremos el procedimiento almacenado
+                leer = comando.ExecuteReader();//ejecutamos el comando para obtener los datos del procedimiento almacenado
+
+                List<object[]> lista = new List<object[]>();//creamos una lista de arrays para almacenar las filas de la tabla de la base de datos
+                while (leer.Read())//leerá hasta que ya no encuentre que leer
+                {
+                    object[] filas = new string[leer.FieldCount];//columnas almacenará los campos , fieldcount cuanta cuantas columnas hay en la tabla, pero nos servirá para definir cuantos campos ingresar en nuestra fila
+                    for (int j = 0; j < leer.FieldCount; j++)//repetiremos hasta que nos quedemos sin columnas
+                    {
+                        filas[j] = String.Format("{0}", leer[j]);//ingresamos el campo a la fila
+                    }
+                    lista.Add(filas);//agregamos la fila a la lista
+                }
+                leer.Close();//cerramos el reader
+                return lista;//retornamos la lista de arrays
+            }
+            catch (Exception e)
+            {
+
+                return null;//devolvemos null por si falla algo
+            }
+        }
+
+
+
 
     }
 }

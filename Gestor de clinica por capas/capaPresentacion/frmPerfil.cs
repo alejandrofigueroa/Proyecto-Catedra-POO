@@ -64,9 +64,6 @@ namespace capaPresentacion
             }
             else
             {
-
-
-                MenuVertical.errores = "[Guardando...] Por favor espere.";
                 try
                 {
                     string[,] docParametros = new string[9, 2];
@@ -133,7 +130,7 @@ namespace capaPresentacion
                         MenuVertical.errores = "No se pudo modificar el usuario";
                         btnActualizar.Text = "Guardar";
                     }
-
+                    MenuVertical.cargarVariables();
                 }
                 catch (Exception exz)
                 {
@@ -159,7 +156,7 @@ namespace capaPresentacion
                     txtDireccion.Text = usuario[4].ToString();
                     txtTelefono.Text = usuario[5].ToString();
                     txtDui.Text = usuario[6].ToString();
-                    lblClinica.Text = usuario[11].ToString();
+                    
                     if (usuario[7].ToString() == "m")
                     {
                         cboGenero.SelectedItem = "Masculino";
@@ -168,17 +165,58 @@ namespace capaPresentacion
                     {
                         cboGenero.SelectedItem = "Femenino";
                     }
-                    var array = Convert.FromBase64String(usuario[8].ToString());
-                    using (var ms = new MemoryStream(array))
+
+
+                    switch (MenuVertical.IDrolSesion)
                     {
-                       pbUsuario.Image = Image.FromStream(ms);
+                        case 1:
+                            lblRol.Text = "Administrador";
+                            break;
+                        case 2:
+                            if (usuario[7].ToString() == "m")
+                            {
+                                lblRol.Text = "Doctor";
+                            }
+                            else
+                            {
+                                lblRol.Text = "Doctora";
+                            }
+                            break;
+                        case 3:
+                            if (usuario[7].ToString() == "m")
+                            {
+                                lblRol.Text = "Secretario";
+                            }
+                            else
+                            {
+                                lblRol.Text = "Secretaria";
+                            }
+                            break;
                     }
+
+                    switch (MenuVertical.clinicasesion)
+                    {
+                        case 1:
+                           lblClinica.Text = "Administrador";
+                            break;
+                        case 2:
+                            lblClinica.Text = "Clinica General";
+                            break;
+                        case 3:
+                            lblClinica.Text = "Laboratorio";
+                            break;
+                    }
+                    var array = Convert.FromBase64String(usuario[8].ToString());
+                            using (var ms = new MemoryStream(array))
+                            {
+                        MenuVertical.cargarVariables();
+                            }
+                    
                 }
             }
             catch (Exception ex)
             {
-
-                MenuVertical.errores = "[ERROR]: "+ex;
+                
             }
         }
     }

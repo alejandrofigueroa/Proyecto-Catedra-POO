@@ -39,21 +39,26 @@
             this.btnTemas = new System.Windows.Forms.Button();
             this.btnNotificaciones = new System.Windows.Forms.Button();
             this.panelContTemas = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.PanelAdministracion = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMiPerfil = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.contNotificicaciones = new System.Windows.Forms.Panel();
+            this.Enviar = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.cboDestino = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMensaje = new System.Windows.Forms.TextBox();
             this.listNotificaciones = new System.Windows.Forms.ListBox();
             this.contenedor = new System.Windows.Forms.Panel();
             this.panelCont = new System.Windows.Forms.Panel();
@@ -67,14 +72,12 @@
             this.btnSlide = new System.Windows.Forms.PictureBox();
             this.menuPrincipal = new System.Windows.Forms.Panel();
             this.panelBotonClinica = new System.Windows.Forms.Panel();
-            this.btnClinicaConsultas = new System.Windows.Forms.Button();
             this.btnClinicaPacientes = new System.Windows.Forms.Button();
             this.btnClinicaCitas = new System.Windows.Forms.Button();
             this.btnClinicaDoctores = new System.Windows.Forms.Button();
             this.btnClinica = new System.Windows.Forms.Button();
             this.PanelBotonLaboratorio = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
-            this.btnConsultas = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.btnIngresarDoctorLab = new System.Windows.Forms.Button();
@@ -84,11 +87,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BarraDeEstado = new System.Windows.Forms.StatusStrip();
             this.statusLabelErrores = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.txtMensaje = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboDestino = new System.Windows.Forms.ComboBox();
-            this.Enviar = new System.Windows.Forms.Button();
             this.barraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
@@ -100,10 +98,11 @@
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.PanelAdministracion.SuspendLayout();
             this.panel5.SuspendLayout();
             this.contNotificicaciones.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.contenedor.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FotoPerfil)).BeginInit();
@@ -116,7 +115,6 @@
             this.Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraDeEstado.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // barraTitulo
@@ -189,8 +187,8 @@
             // 
             this.menuOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(81)))), ((int)(((byte)(112)))));
             this.menuOpciones.Controls.Add(this.panel2);
-            this.menuOpciones.Controls.Add(this.contNotificicaciones);
             this.menuOpciones.Controls.Add(this.panelContTemas);
+            this.menuOpciones.Controls.Add(this.contNotificicaciones);
             this.menuOpciones.Dock = System.Windows.Forms.DockStyle.Right;
             this.menuOpciones.Location = new System.Drawing.Point(770, 0);
             this.menuOpciones.Name = "menuOpciones";
@@ -237,6 +235,7 @@
             // 
             // panelContTemas
             // 
+            this.panelContTemas.Controls.Add(this.btnCerrarSesion);
             this.panelContTemas.Controls.Add(this.panel9);
             this.panelContTemas.Controls.Add(this.panel8);
             this.panelContTemas.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -246,10 +245,28 @@
             this.panelContTemas.TabIndex = 2;
             this.panelContTemas.Visible = false;
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 537);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(250, 30);
+            this.btnCerrarSesion.TabIndex = 12;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.panel6);
-            this.panel9.Controls.Add(this.panel4);
+            this.panel9.Controls.Add(this.PanelAdministracion);
             this.panel9.Controls.Add(this.btnMiPerfil);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 21);
@@ -326,33 +343,16 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Perfil";
             // 
-            // panel4
+            // PanelAdministracion
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 24);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 123);
-            this.panel4.TabIndex = 9;
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 80);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(250, 30);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Roles";
-            this.button3.UseVisualStyleBackColor = true;
+            this.PanelAdministracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.PanelAdministracion.Controls.Add(this.button2);
+            this.PanelAdministracion.Controls.Add(this.panel5);
+            this.PanelAdministracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelAdministracion.Location = new System.Drawing.Point(0, 24);
+            this.PanelAdministracion.Name = "PanelAdministracion";
+            this.PanelAdministracion.Size = new System.Drawing.Size(250, 123);
+            this.PanelAdministracion.TabIndex = 9;
             // 
             // button2
             // 
@@ -427,6 +427,19 @@
             this.contNotificicaciones.Size = new System.Drawing.Size(250, 567);
             this.contNotificicaciones.TabIndex = 1;
             // 
+            // Enviar
+            // 
+            this.Enviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.Enviar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Enviar.FlatAppearance.BorderSize = 0;
+            this.Enviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Enviar.Location = new System.Drawing.Point(0, 544);
+            this.Enviar.Name = "Enviar";
+            this.Enviar.Size = new System.Drawing.Size(250, 23);
+            this.Enviar.TabIndex = 5;
+            this.Enviar.Text = "Enviar";
+            this.Enviar.UseVisualStyleBackColor = false;
+            // 
             // panel13
             // 
             this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -439,6 +452,46 @@
             this.panel13.Size = new System.Drawing.Size(247, 486);
             this.panel13.TabIndex = 1;
             this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.cboDestino);
+            this.panel10.Controls.Add(this.label3);
+            this.panel10.Controls.Add(this.txtMensaje);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(0, 306);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(247, 180);
+            this.panel10.TabIndex = 1;
+            // 
+            // cboDestino
+            // 
+            this.cboDestino.FormattingEnabled = true;
+            this.cboDestino.Location = new System.Drawing.Point(0, 38);
+            this.cboDestino.Name = "cboDestino";
+            this.cboDestino.Size = new System.Drawing.Size(246, 21);
+            this.cboDestino.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(125, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 28);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Mensajes";
+            // 
+            // txtMensaje
+            // 
+            this.txtMensaje.Location = new System.Drawing.Point(0, 65);
+            this.txtMensaje.Multiline = true;
+            this.txtMensaje.Name = "txtMensaje";
+            this.txtMensaje.Size = new System.Drawing.Size(246, 90);
+            this.txtMensaje.TabIndex = 1;
             // 
             // listNotificaciones
             // 
@@ -593,99 +646,93 @@
             // 
             // panelBotonClinica
             // 
-            this.panelBotonClinica.Controls.Add(this.btnClinicaConsultas);
             this.panelBotonClinica.Controls.Add(this.btnClinicaPacientes);
             this.panelBotonClinica.Controls.Add(this.btnClinicaCitas);
             this.panelBotonClinica.Controls.Add(this.btnClinicaDoctores);
             this.panelBotonClinica.Controls.Add(this.btnClinica);
             this.panelBotonClinica.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBotonClinica.Location = new System.Drawing.Point(0, 155);
+            this.panelBotonClinica.Location = new System.Drawing.Point(0, 261);
             this.panelBotonClinica.Name = "panelBotonClinica";
-            this.panelBotonClinica.Size = new System.Drawing.Size(250, 50);
+            this.panelBotonClinica.Size = new System.Drawing.Size(250, 129);
             this.panelBotonClinica.TabIndex = 5;
-            // 
-            // btnClinicaConsultas
-            // 
-            this.btnClinicaConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClinicaConsultas.FlatAppearance.BorderSize = 0;
-            this.btnClinicaConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClinicaConsultas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClinicaConsultas.ForeColor = System.Drawing.Color.White;
-            this.btnClinicaConsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClinicaConsultas.Location = new System.Drawing.Point(0, 153);
-            this.btnClinicaConsultas.Name = "btnClinicaConsultas";
-            this.btnClinicaConsultas.Size = new System.Drawing.Size(250, 25);
-            this.btnClinicaConsultas.TabIndex = 13;
-            this.btnClinicaConsultas.Text = "Consultas";
-            this.btnClinicaConsultas.UseVisualStyleBackColor = true;
             // 
             // btnClinicaPacientes
             // 
             this.btnClinicaPacientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClinicaPacientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClinicaPacientes.FlatAppearance.BorderSize = 0;
             this.btnClinicaPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClinicaPacientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClinicaPacientes.ForeColor = System.Drawing.Color.White;
             this.btnClinicaPacientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClinicaPacientes.Location = new System.Drawing.Point(0, 125);
+            this.btnClinicaPacientes.Location = new System.Drawing.Point(0, 100);
             this.btnClinicaPacientes.Name = "btnClinicaPacientes";
             this.btnClinicaPacientes.Size = new System.Drawing.Size(250, 25);
             this.btnClinicaPacientes.TabIndex = 12;
+            this.btnClinicaPacientes.Tag = "Pacientes";
             this.btnClinicaPacientes.Text = " Pacientes";
             this.btnClinicaPacientes.UseVisualStyleBackColor = true;
+            this.btnClinicaPacientes.Visible = false;
             // 
             // btnClinicaCitas
             // 
             this.btnClinicaCitas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClinicaCitas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClinicaCitas.FlatAppearance.BorderSize = 0;
             this.btnClinicaCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClinicaCitas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClinicaCitas.ForeColor = System.Drawing.Color.White;
             this.btnClinicaCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClinicaCitas.Location = new System.Drawing.Point(0, 97);
+            this.btnClinicaCitas.Location = new System.Drawing.Point(0, 75);
             this.btnClinicaCitas.Name = "btnClinicaCitas";
             this.btnClinicaCitas.Size = new System.Drawing.Size(250, 25);
             this.btnClinicaCitas.TabIndex = 11;
+            this.btnClinicaCitas.Tag = "Citas";
             this.btnClinicaCitas.Text = " Citas";
             this.btnClinicaCitas.UseVisualStyleBackColor = true;
+            this.btnClinicaCitas.Visible = false;
             // 
             // btnClinicaDoctores
             // 
             this.btnClinicaDoctores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.btnClinicaDoctores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClinicaDoctores.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClinicaDoctores.FlatAppearance.BorderSize = 0;
             this.btnClinicaDoctores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClinicaDoctores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClinicaDoctores.ForeColor = System.Drawing.Color.White;
             this.btnClinicaDoctores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClinicaDoctores.Location = new System.Drawing.Point(0, 69);
+            this.btnClinicaDoctores.Location = new System.Drawing.Point(0, 50);
             this.btnClinicaDoctores.Name = "btnClinicaDoctores";
             this.btnClinicaDoctores.Size = new System.Drawing.Size(250, 25);
             this.btnClinicaDoctores.TabIndex = 10;
+            this.btnClinicaDoctores.Tag = "Doctores";
             this.btnClinicaDoctores.Text = "Doctores";
             this.btnClinicaDoctores.UseVisualStyleBackColor = false;
+            this.btnClinicaDoctores.Visible = false;
             // 
             // btnClinica
             // 
             this.btnClinica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClinica.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClinica.FlatAppearance.BorderSize = 0;
             this.btnClinica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClinica.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.btnClinica.ForeColor = System.Drawing.Color.White;
             this.btnClinica.Image = global::capaPresentacion.Properties.Resources.estetoscopio_01;
             this.btnClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClinica.Location = new System.Drawing.Point(0, 2);
+            this.btnClinica.Location = new System.Drawing.Point(0, 0);
             this.btnClinica.Name = "btnClinica";
             this.btnClinica.Size = new System.Drawing.Size(250, 50);
             this.btnClinica.TabIndex = 4;
-            this.btnClinica.Text = "Clinica";
+            this.btnClinica.Text = "         Clinica";
+            this.btnClinica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClinica.UseVisualStyleBackColor = true;
             this.btnClinica.Click += new System.EventHandler(this.btnClinica_Click_1);
             // 
             // PanelBotonLaboratorio
             // 
             this.PanelBotonLaboratorio.Controls.Add(this.button9);
-            this.PanelBotonLaboratorio.Controls.Add(this.btnConsultas);
             this.PanelBotonLaboratorio.Controls.Add(this.button8);
             this.PanelBotonLaboratorio.Controls.Add(this.btnCitas);
             this.PanelBotonLaboratorio.Controls.Add(this.btnIngresarDoctorLab);
@@ -693,101 +740,100 @@
             this.PanelBotonLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBotonLaboratorio.Location = new System.Drawing.Point(0, 100);
             this.PanelBotonLaboratorio.Name = "PanelBotonLaboratorio";
-            this.PanelBotonLaboratorio.Size = new System.Drawing.Size(250, 55);
+            this.PanelBotonLaboratorio.Size = new System.Drawing.Size(250, 161);
             this.PanelBotonLaboratorio.TabIndex = 0;
             // 
             // button9
             // 
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(0, 182);
+            this.button9.Location = new System.Drawing.Point(0, 125);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(250, 25);
             this.button9.TabIndex = 10;
+            this.button9.Tag = "Estudios";
             this.button9.Text = "Estudios";
             this.button9.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultas
-            // 
-            this.btnConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultas.FlatAppearance.BorderSize = 0;
-            this.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultas.ForeColor = System.Drawing.Color.White;
-            this.btnConsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultas.Location = new System.Drawing.Point(0, 154);
-            this.btnConsultas.Name = "btnConsultas";
-            this.btnConsultas.Size = new System.Drawing.Size(250, 25);
-            this.btnConsultas.TabIndex = 9;
-            this.btnConsultas.Text = "Consultas";
-            this.btnConsultas.UseVisualStyleBackColor = true;
+            this.button9.Visible = false;
             // 
             // button8
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 126);
+            this.button8.Location = new System.Drawing.Point(0, 100);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(250, 25);
             this.button8.TabIndex = 8;
+            this.button8.Tag = "Pacientes";
             this.button8.Text = " Pacientes";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Visible = false;
             // 
             // btnCitas
             // 
             this.btnCitas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCitas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCitas.FlatAppearance.BorderSize = 0;
             this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCitas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCitas.ForeColor = System.Drawing.Color.White;
             this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCitas.Location = new System.Drawing.Point(0, 98);
+            this.btnCitas.Location = new System.Drawing.Point(0, 75);
             this.btnCitas.Name = "btnCitas";
             this.btnCitas.Size = new System.Drawing.Size(250, 25);
             this.btnCitas.TabIndex = 7;
+            this.btnCitas.Tag = "Citas";
             this.btnCitas.Text = " Citas";
             this.btnCitas.UseVisualStyleBackColor = true;
+            this.btnCitas.Visible = false;
             this.btnCitas.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnIngresarDoctorLab
             // 
             this.btnIngresarDoctorLab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.btnIngresarDoctorLab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresarDoctorLab.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnIngresarDoctorLab.FlatAppearance.BorderSize = 0;
             this.btnIngresarDoctorLab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarDoctorLab.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresarDoctorLab.ForeColor = System.Drawing.Color.White;
             this.btnIngresarDoctorLab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresarDoctorLab.Location = new System.Drawing.Point(0, 70);
+            this.btnIngresarDoctorLab.Location = new System.Drawing.Point(0, 50);
             this.btnIngresarDoctorLab.Name = "btnIngresarDoctorLab";
             this.btnIngresarDoctorLab.Size = new System.Drawing.Size(250, 25);
             this.btnIngresarDoctorLab.TabIndex = 6;
+            this.btnIngresarDoctorLab.Tag = "Doctores";
             this.btnIngresarDoctorLab.Text = "Doctores";
             this.btnIngresarDoctorLab.UseVisualStyleBackColor = false;
+            this.btnIngresarDoctorLab.Visible = false;
             this.btnIngresarDoctorLab.Click += new System.EventHandler(this.btnIngresarDoctorLab_Click);
             // 
             // btnLaboratorio
             // 
             this.btnLaboratorio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLaboratorio.FlatAppearance.BorderSize = 0;
             this.btnLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLaboratorio.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.btnLaboratorio.ForeColor = System.Drawing.Color.White;
             this.btnLaboratorio.Image = global::capaPresentacion.Properties.Resources.Microscopio_01;
             this.btnLaboratorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLaboratorio.Location = new System.Drawing.Point(0, 2);
+            this.btnLaboratorio.Location = new System.Drawing.Point(0, 0);
             this.btnLaboratorio.Name = "btnLaboratorio";
-            this.btnLaboratorio.Size = new System.Drawing.Size(250, 42);
+            this.btnLaboratorio.Size = new System.Drawing.Size(250, 50);
             this.btnLaboratorio.TabIndex = 5;
             this.btnLaboratorio.Text = "         Laboratorio";
+            this.btnLaboratorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLaboratorio.UseVisualStyleBackColor = true;
             this.btnLaboratorio.Click += new System.EventHandler(this.btnLaboratorio_Click);
             // 
@@ -843,59 +889,6 @@
             this.statusLabelErrores.Size = new System.Drawing.Size(12, 17);
             this.statusLabelErrores.Text = "-";
             // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.cboDestino);
-            this.panel10.Controls.Add(this.label3);
-            this.panel10.Controls.Add(this.txtMensaje);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 306);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(247, 180);
-            this.panel10.TabIndex = 1;
-            // 
-            // txtMensaje
-            // 
-            this.txtMensaje.Location = new System.Drawing.Point(0, 65);
-            this.txtMensaje.Multiline = true;
-            this.txtMensaje.Name = "txtMensaje";
-            this.txtMensaje.Size = new System.Drawing.Size(246, 90);
-            this.txtMensaje.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(125, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 28);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Mensajes";
-            // 
-            // cboDestino
-            // 
-            this.cboDestino.FormattingEnabled = true;
-            this.cboDestino.Location = new System.Drawing.Point(0, 38);
-            this.cboDestino.Name = "cboDestino";
-            this.cboDestino.Size = new System.Drawing.Size(246, 21);
-            this.cboDestino.TabIndex = 3;
-            // 
-            // Enviar
-            // 
-            this.Enviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.Enviar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Enviar.FlatAppearance.BorderSize = 0;
-            this.Enviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Enviar.Location = new System.Drawing.Point(0, 544);
-            this.Enviar.Name = "Enviar";
-            this.Enviar.Size = new System.Drawing.Size(250, 23);
-            this.Enviar.TabIndex = 5;
-            this.Enviar.Text = "Enviar";
-            this.Enviar.UseVisualStyleBackColor = false;
-            // 
             // MenuVertical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -922,11 +915,13 @@
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel4.ResumeLayout(false);
+            this.PanelAdministracion.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.contNotificicaciones.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.contenedor.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -942,8 +937,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BarraDeEstado.ResumeLayout(false);
             this.BarraDeEstado.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -989,19 +982,16 @@
         private System.Windows.Forms.Button btnCitas;
         private System.Windows.Forms.Button btnIngresarDoctorLab;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button btnClinicaConsultas;
         private System.Windows.Forms.Button btnClinicaPacientes;
         private System.Windows.Forms.Button btnClinicaCitas;
         private System.Windows.Forms.Button btnClinicaDoctores;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnPerfil;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel PanelAdministracion;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
@@ -1010,6 +1000,7 @@
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.ComboBox cboDestino;
         private System.Windows.Forms.Button Enviar;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }
 

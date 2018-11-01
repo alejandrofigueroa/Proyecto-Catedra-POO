@@ -12,8 +12,6 @@ namespace capaDatosNegocios
 {
     public class Doctor
     {
-        private Conexion Conexion = new Conexion();
-        private SqlDataReader leer;
 
         private int id_doctor;
         private string especialidad;
@@ -67,20 +65,6 @@ namespace capaDatosNegocios
             {
                 fk_empleado = value;
             }
-        }
-
-       
-
-        //Iniciando mantenimiento para doctores
-        public SqlDataReader insertarDoctor(String especialidad, String descripcion, String fk_empleado)
-        {
-            SqlCommand comando = new SqlCommand("insertarDoctor", Conexion.AbrirConexion());
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@especialidad", especialidad);
-            comando.Parameters.AddWithValue("@descripcion", descripcion);
-            comando.Parameters.AddWithValue("@fk_idempleado", fk_empleado);
-            leer = comando.ExecuteReader();
-            return leer;
         }
     }
 }

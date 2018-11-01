@@ -19,15 +19,16 @@ namespace capaPresentacion
 
             /*con estas variables van a poder acceder a caracteristicas del menu principal*/
         public static string usuarioSesion;//pueden usar esta variable para saber el id del usuario que se ha logeado, no le asignen valores por que se le asigna desde el login
-        public string nombreSesion;
-        public string rolSesion;
-        public string clinicasesion;
+        public static string nombreSesion;
+        public static string rolSesionNombre;
+        public static int IDrolSesion;
+        public static int clinicasesion;
         public static string errores;// con esta variable pueden poner errores en la barra de estado del menu
         public static Image fotoPerfil;
 
-        storedProcedure sp = new storedProcedure();
 
         Timer t = new Timer();
+
         public MenuVertical()
         {
             InitializeComponent();
@@ -35,24 +36,19 @@ namespace capaPresentacion
             FotoPerfil.Image = fotoPerfil;
         }
 
-        public void cargarVariables() {
-            try
-            {
-                string[] docParametros = new string[1];//creamos un string para los parametros
-                docParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";//guardamos los parametros que queremos, no le ponemos las comillas simples al parametro, dará error
-                List<object[]> usuarios = sp.lt(docParametros, "verUsuario");//mandamos a llamar la clase sp con la funcion lt
+        private void MenuVertical_Load(object sender, EventArgs e)
+        {
+            menuOpciones.Width = 0;
+            menuPrincipal.Width = 250;
 
-                foreach (object[] usuario in usuarios)//cargamos los datos en nuestra lista
-                {
-                    var array = Convert.FromBase64String(usuario[8].ToString());
-                    using (var ms = new MemoryStream(array))
-                    {
-                        fotoPerfil = Image.FromStream(ms);
-                    }
-                }
-            }catch{
+            t.Interval = 1000;
 
-            }
+            t.Tick += new EventHandler(this.t_Tick);
+
+            t.Start();
+
+            lblUsuarioActual.Text = usuarioSesion;
+            roles();
         }
 
         private void btnSlide_Click(object sender, EventArgs e)
@@ -88,20 +84,7 @@ namespace capaPresentacion
             btnNotificaciones_Click(null, e);
         }
 
-        private void MenuVertical_Load(object sender, EventArgs e)
-        {
-            menuOpciones.Width = 0;
-            menuPrincipal.Width = 80;
-
-            t.Interval = 1000;
-
-            t.Tick += new EventHandler(this.t_Tick);
-
-            t.Start();
-
-            lblUsuarioActual.Text = usuarioSesion;
-        }
-
+       
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -135,6 +118,8 @@ namespace capaPresentacion
 
             try
             {
+
+                storedProcedure sp = new storedProcedure();
                 string[] notiParametros = new string[1];
                 listNotificaciones.Items.Clear();
                 notiParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";
@@ -161,103 +146,9 @@ namespace capaPresentacion
             btnNotificaciones.BackColor = Color.FromArgb(41, 66, 91);
         }
 
-        private void t_Tick(Object sender, EventArgs e)
-        {
-            int hh = DateTime.Now.Hour;
-            int mm = DateTime.Now.Minute;
-            int dia = DateTime.Now.Day;
-            int mes = DateTime.Now.Month;
-            int anio = DateTime.Now.Year;
-            string fecha = "";
-            string time = "";
-            statusLabelErrores.Text = MenuVertical.errores;
-            if (hh < 10)
-            {
-                time += "0" + hh;
-            }
-            else
-            {
-                if ((12 - hh) < 0)
-                {
-                    time += (hh -12);
-                }else
-                if ((12 - hh ) > 0)
-                {
-                    time += "0" + (hh);
-                }
-                else
-                {
-                    time += (hh);
-                }
-            }
-
-
-            time += ":";
-
-            if (mm < 10)
-            {
-                time += "0" + mm;
-            }
-            else
-            {
-                time += mm;
-            }
-            if (hh < 12)
-            {
-                time += "  AM";
-            }
-            else if (hh == 12)
-            {
-                time += "  M";
-            }
-            else
-            {
-                time += "  PM";
-            }
-
-
-            if (dia < 10)
-            {
-                fecha += "0" + dia + "/";
-            }
-            else
-            {
-                fecha += dia + "/";
-            }
-
-            if (mes < 10)
-            {
-                fecha += "0" + mes + "/";
-            }
-            else
-            {
-                fecha += mes + "/";
-            }
-
-            fecha += anio;
-            reloj.Text = time;
-            lblFecha.Text = fecha;
-
-
-            //el siguiente bucle comentado puede ser reutilizado
-            //creo un objeto de tipo CNEmpleado(clase que se crea en la capa de negocios)
-            Empleado objEmpleado = new Empleado();
-            //mando a llamar el procedimiento almacenado
-          //  SqlDataReader Logear;
-            //asigno variables al objeto (getters y setters creados en la clase de negocios)
-         //   objEmpleado.Usuario = txtUsuario.Text;
-          //  objEmpleado.Pass = txtPass.Text;
-            //de aqui en adelante juego con las variables seteadas en la capa negocios para la programacion del login
-
-
-
-
-        }
-
         private void btnClinica_Click(object sender, EventArgs e)
         {
             
-            //statusLabel.Text = Conexion.con();
         }
 
         private void btnMiPerfil_Click(object sender, EventArgs e)
@@ -337,18 +228,7 @@ namespace capaPresentacion
             }
         }
 
-        //abre dentro del panel el frm
-        private void AbrirFormInPanel(Object Formhijo)
-        {
-            if (this.panelCont.Controls.Count > 0)
-                this.panelCont.Controls.RemoveAt(0);
-            Form fh = Formhijo as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.panelCont.Controls.Add(fh);
-            this.panelCont.Tag = fh;
-            fh.Show();
-        }
+        
 
         private void btnIngresarDoctorLab_Click(object sender, EventArgs e)
         {
@@ -388,5 +268,208 @@ namespace capaPresentacion
             cboDestino.Text = mensaje[0];
             txtMensaje.Text = mensaje[1];
         }
+
+        private void btnClinicaConsultas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            lg.Show();
+            this.Close();
+        }
+
+
+        //----------------------------------funciones----------------------------------
+
+        //carga variables locales
+        public static void cargarVariables()
+        {
+            try
+            {
+
+                storedProcedure sp = new storedProcedure();
+                string[] docParametros = new string[1];//creamos un string para los parametros
+                docParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";//guardamos los parametros que queremos, no le ponemos las comillas simples al parametro, dará error
+                List<object[]> usuarios = sp.lt(docParametros, "verUsuario");//mandamos a llamar la clase sp con la funcion lt
+
+                foreach (object[] usuario in usuarios)//cargamos los datos en nuestra lista
+                {
+                    MenuVertical.clinicasesion = Convert.ToInt32(usuario[11]);
+                    IDrolSesion = Convert.ToInt32(usuario[9]);
+
+                    var array = Convert.FromBase64String(usuario[8].ToString());
+                    using (var ms = new MemoryStream(array))
+                    {
+                        try
+                        {
+                            fotoPerfil = Image.FromStream(ms);
+                        }
+                        catch
+                        {
+                            fotoPerfil = capaPresentacion.Properties.Resources.clinic_logo___Buscar_con_Google___Google_Chrome;
+                        }
+                    }
+
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+            //abre dentro del panel el frm
+        private void AbrirFormInPanel(Object Formhijo)
+        {
+            if (this.panelCont.Controls.Count > 0)
+                this.panelCont.Controls.RemoveAt(0);
+            Form fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelCont.Controls.Add(fh);
+            this.panelCont.Tag = fh;
+            fh.Show();
+        }
+            
+            //verifica los roles, muesta los botones dependiendo el rol
+        private void roles()
+        {
+            storedProcedure sp = new storedProcedure();
+            string[] permisosParametros = new string[1];//creamos un string para los parametros
+            permisosParametros[0] = "@ID_rol = " + MenuVertical.IDrolSesion + "";//guardamos los parametros que queremos, no le ponemos las comillas simples al parametro, dará error
+            List<object[]> usuariosPermisos = sp.lt(permisosParametros, "verPermisos");//mandamos a llamar la clase sp con la funcion lt
+
+            foreach (object[] permiso in usuariosPermisos)
+            {
+
+                foreach (Control ctl in this.PanelBotonLaboratorio.Controls)
+                {
+                    var a = ctl;
+                    var tg = a.Tag;
+
+                    if (tg != null && tg.Equals(permiso[1].ToString()))
+                    {
+                        a.Visible = true;
+                    }
+
+                    var b = 0;
+                }
+                foreach (Control ctl in this.panelBotonClinica.Controls)
+                {
+                    var a = ctl;
+                    var tg = a.Tag;
+
+                    if (tg != null && tg.Equals(permiso[1].ToString()))
+                    {
+                        a.Visible = true;
+                    }
+
+                    var b = 0;
+                }
+            }
+
+
+            switch (MenuVertical.clinicasesion) {
+                case 1:
+                    
+                    break;
+                case 2:
+                    panelBotonClinica.Visible = false;
+                    PanelAdministracion.Visible = false;
+                    break;
+                case 3:
+                    PanelBotonLaboratorio.Visible = false;
+                    PanelAdministracion.Visible = false;
+                    break;
+            }
+        }
+
+            //esta activo todo el tiempo
+        private void t_Tick(Object sender, EventArgs e)
+        {
+            int hh = DateTime.Now.Hour;
+            int mm = DateTime.Now.Minute;
+            int dia = DateTime.Now.Day;
+            int mes = DateTime.Now.Month;
+            int anio = DateTime.Now.Year;
+            string fecha = "";
+            string time = "";
+            statusLabelErrores.Text = MenuVertical.errores;
+            if (hh < 10)
+            {
+                time += "0" + hh;
+            }
+            else
+            {
+                if ((12 - hh) < 0)
+                {
+                    time += (hh - 12);
+                }
+                else
+                if ((12 - hh) > 0)
+                {
+                    time += "0" + (hh);
+                }
+                else
+                {
+                    time += (hh);
+                }
+            }
+
+
+            time += ":";
+
+            if (mm < 10)
+            {
+                time += "0" + mm;
+            }
+            else
+            {
+                time += mm;
+            }
+            if (hh < 12)
+            {
+                time += "  AM";
+            }
+            else if (hh == 12)
+            {
+                time += "  M";
+            }
+            else
+            {
+                time += "  PM";
+            }
+
+
+            if (dia < 10)
+            {
+                fecha += "0" + dia + "/";
+            }
+            else
+            {
+                fecha += dia + "/";
+            }
+
+            if (mes < 10)
+            {
+                fecha += "0" + mes + "/";
+            }
+            else
+            {
+                fecha += mes + "/";
+            }
+
+            fecha += anio;
+            reloj.Text = time;
+            lblFecha.Text = fecha;
+
+
+
+
+        }
+
     }
 }
