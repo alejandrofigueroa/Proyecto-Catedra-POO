@@ -400,13 +400,15 @@ GO
 	--creando mantenimiento citas
 	--REVISAR PROCEDURE
 	CREATE PROCEDURE Clinicas.IngresarCitas
-	(@id_Cita int ,
-	@fecha date null,
-	@Descripcion varchar (255)null,
-	@precio decimal(18,0)null)
+	(@fecha date,
+	@Descripcion varchar (255),
+	@precio decimal(18,0),
+	@Fk_IdPaciente int,
+	@Fk_IdDoctor int 
+	)
 	as
 	insert into cita
-	values (@id_Cita,@fecha,@Descripcion,@precio)
+	values (@fecha,@Descripcion,@precio,@Fk_IdPaciente,@Fk_IdDoctor)
 	go
 	--Hasta aqui
 
@@ -466,6 +468,15 @@ GO
 	where @idTipo_Estudio=IdTipo_Estudio
 	go
 	
+	--Mantenimiento Permiso
+	create procedure clinicas.verPermisos(
+	@ID_rol int
+	)
+	as
+	select * from clinicas.Permiso
+	WHERE fk_rol = @ID_rol;
+	GO
+
 	--ejecuciones
 	select *  from clinicas.clinica
 	
