@@ -114,7 +114,6 @@
             this.PanelBotonLaboratorio.SuspendLayout();
             this.Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.BarraDeEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // barraTitulo
@@ -525,7 +524,6 @@
             // panelCont
             // 
             this.panelCont.BackColor = System.Drawing.Color.White;
-            this.panelCont.BackgroundImage = global::capaPresentacion.Properties.Resources.clinic_logo___Buscar_con_Google___Google_Chrome;
             this.panelCont.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelCont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCont.Location = new System.Drawing.Point(250, 56);
@@ -576,8 +574,7 @@
             // FotoPerfil
             // 
             this.FotoPerfil.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FotoPerfil.ErrorImage = global::capaPresentacion.Properties.Resources.clinic_logo___Buscar_con_Google___Google_Chrome;
-            this.FotoPerfil.Image = global::capaPresentacion.Properties.Resources.clinic_logo___Buscar_con_Google___Google_Chrome;
+            this.FotoPerfil.Image = ((System.Drawing.Image)(resources.GetObject("FotoPerfil.Image")));
             this.FotoPerfil.Location = new System.Drawing.Point(287, 0);
             this.FotoPerfil.Name = "FotoPerfil";
             this.FotoPerfil.Size = new System.Drawing.Size(92, 56);
@@ -713,13 +710,14 @@
             // 
             // btnClinica
             // 
+            this.btnClinica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.btnClinica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClinica.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClinica.FlatAppearance.BorderSize = 0;
             this.btnClinica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClinica.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.btnClinica.ForeColor = System.Drawing.Color.White;
-            this.btnClinica.Image = global::capaPresentacion.Properties.Resources.estetoscopio_01;
+            this.btnClinica.Image = ((System.Drawing.Image)(resources.GetObject("btnClinica.Image")));
             this.btnClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClinica.Location = new System.Drawing.Point(0, 0);
             this.btnClinica.Name = "btnClinica";
@@ -727,7 +725,7 @@
             this.btnClinica.TabIndex = 4;
             this.btnClinica.Text = "         Clinica";
             this.btnClinica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClinica.UseVisualStyleBackColor = true;
+            this.btnClinica.UseVisualStyleBackColor = false;
             this.btnClinica.Click += new System.EventHandler(this.btnClinica_Click_1);
             // 
             // PanelBotonLaboratorio
@@ -820,13 +818,14 @@
             // 
             // btnLaboratorio
             // 
+            this.btnLaboratorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.btnLaboratorio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLaboratorio.FlatAppearance.BorderSize = 0;
             this.btnLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLaboratorio.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.btnLaboratorio.ForeColor = System.Drawing.Color.White;
-            this.btnLaboratorio.Image = global::capaPresentacion.Properties.Resources.Microscopio_01;
+            this.btnLaboratorio.Image = ((System.Drawing.Image)(resources.GetObject("btnLaboratorio.Image")));
             this.btnLaboratorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLaboratorio.Location = new System.Drawing.Point(0, 0);
             this.btnLaboratorio.Name = "btnLaboratorio";
@@ -834,7 +833,7 @@
             this.btnLaboratorio.TabIndex = 5;
             this.btnLaboratorio.Text = "         Laboratorio";
             this.btnLaboratorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLaboratorio.UseVisualStyleBackColor = true;
+            this.btnLaboratorio.UseVisualStyleBackColor = false;
             this.btnLaboratorio.Click += new System.EventHandler(this.btnLaboratorio_Click);
             // 
             // Logo
@@ -863,7 +862,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::capaPresentacion.Properties.Resources.unnamed;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 100);
@@ -875,8 +874,6 @@
             // BarraDeEstado
             // 
             this.BarraDeEstado.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BarraDeEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabelErrores});
             this.BarraDeEstado.Location = new System.Drawing.Point(0, 593);
             this.BarraDeEstado.Name = "BarraDeEstado";
             this.BarraDeEstado.Size = new System.Drawing.Size(1020, 22);
@@ -935,8 +932,6 @@
             this.Logo.ResumeLayout(false);
             this.Logo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.BarraDeEstado.ResumeLayout(false);
-            this.BarraDeEstado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -345,13 +345,7 @@ GO
 
 	--creando mantenimiento tipo de estudios
 
-	create procedure clinicas.verPermisos(
-	@ID_rol int
-	)
-	as
-	select * from clinicas.Permiso
-	WHERE fk_rol = @ID_rol;
-	GO
+	
 	
 	--ejecuciones
 	select *  from clinicas.clinica

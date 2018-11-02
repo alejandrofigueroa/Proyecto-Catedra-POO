@@ -309,7 +309,7 @@ namespace capaPresentacion
                         }
                         catch
                         {
-                            fotoPerfil = capaPresentacion.Properties.Resources.clinic_logo___Buscar_con_Google___Google_Chrome;
+                            fotoPerfil = capaPresentacion.Properties.Resources.Don_Bosco;
                         }
                     }
 
@@ -400,7 +400,14 @@ namespace capaPresentacion
             statusLabelErrores.Text = MenuVertical.errores;
             if (hh < 10)
             {
-                time += "0" + hh;
+                if (hh > 0)
+                {
+                    time += "0" + hh;
+                }
+                else {
+
+                    time += "12";
+                }
             }
             else
             {
@@ -409,7 +416,7 @@ namespace capaPresentacion
                     time += (hh - 12);
                 }
                 else
-                if ((12 - hh) > 0)
+                if ((hh-12) > 0)
                 {
                     time += "0" + (hh);
                 }

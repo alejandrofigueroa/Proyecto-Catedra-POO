@@ -75,7 +75,7 @@ namespace capaPresentacion.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap clinic_logo___Buscar_con_Google___Google_Chrome {
             get {
-                object obj = ResourceManager.GetObject("clinic logo - Buscar con Google - Google Chrome", resourceCulture);
+                object obj = ResourceManager.GetObject("clinic_logo___Buscar_con_Google___Google_Chrome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap e9241fdcfd59abd050866113be10454d_icono_de_estetoscopio {
+        internal static System.Drawing.Bitmap doctor2 {
             get {
-                object obj = ResourceManager.GetObject("e9241fdcfd59abd050866113be10454d-icono-de-estetoscopio", resourceCulture);
+                object obj = ResourceManager.GetObject("doctor2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap estetoscopio_01 {
+        internal static System.Drawing.Bitmap Don_Bosco {
             get {
-                object obj = ResourceManager.GetObject("estetoscopio-01", resourceCulture);
+                object obj = ResourceManager.GetObject("Don_Bosco", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,10 +123,29 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap kisspng_health_care_pharmacy_clinic_medicine_5b5888c3238208_8760563615325288351455 {
+        internal static System.Drawing.Bitmap estetoscopio_Mesa_de_trabajo_1 {
             get {
-                object obj = ResourceManager.GetObject("kisspng-health-care-pharmacy-clinic-medicine-5b5888c3238208.876056361532528835145" +
-                        "5", resourceCulture);
+                object obj = ResourceManager.GetObject("estetoscopio_Mesa_de_trabajo_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        internal static System.Drawing.Icon Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microscopio {
+            get {
+                object obj = ResourceManager.GetObject("microscopio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -134,10 +153,9 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap kisspng_microscope_logo_computer_icons_microscope_5ada12a57ad372_0850062015242410615031 {
+        internal static System.Drawing.Bitmap titulo {
             get {
-                object obj = ResourceManager.GetObject("kisspng-microscope-logo-computer-icons-microscope-5ada12a57ad372.0850062015242410" +
-                        "615031", resourceCulture);
+                object obj = ResourceManager.GetObject("titulo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,9 +163,9 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Microscopio_01 {
+        internal static System.Drawing.Bitmap titulo_Mesa_de_trabajo_1 {
             get {
-                object obj = ResourceManager.GetObject("Microscopio-01", resourceCulture);
+                object obj = ResourceManager.GetObject("titulo_Mesa_de_trabajo_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

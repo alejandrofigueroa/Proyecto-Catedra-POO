@@ -7,7 +7,7 @@
     <ProjectGuid>{583A3E1C-8D84-4F8F-A409-A7471B26ED93}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>capaPresentacion</RootNamespace>
-    <AssemblyName>capaPresentacion</AssemblyName>
+    <AssemblyName>Gestor Medico</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>capaPresentacion.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -132,40 +135,36 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BackgroundImage.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\clinic logo - Buscar con Google - Google Chrome.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dienteLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\e9241fdcfd59abd050866113be10454d-icono-de-estetoscopio.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\estetoscopio-01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kisspng-health-care-pharmacy-clinic-medicine-5b5888c3238208.8760563615325288351455.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kisspng-microscope-logo-computer-icons-microscope-5ada12a57ad372.0850062015242410615031.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Microscopio-01.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\unnamed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Doctor.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\capaDatosNegocios\capaDatosNegocios.csproj">
       <Project>{83386120-a492-4c7e-a73d-41b084a3e068}</Project>
       <Name>capaDatosNegocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Don Bosco1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\titulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\titulo_Mesa de trabajo 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logo.ico" />
+    <None Include="Resources\Logo.ico" />
+    <None Include="Resources\microscopio.png" />
+    <None Include="Resources\estetoscopio_Mesa de trabajo 1.png" />
+    <None Include="Resources\Don Bosco.png" />
+    <None Include="Resources\Image1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
