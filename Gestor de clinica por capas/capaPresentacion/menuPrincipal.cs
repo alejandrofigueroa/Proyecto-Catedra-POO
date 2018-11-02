@@ -265,7 +265,9 @@ namespace capaPresentacion
 
         private void btn_Click(object sender, EventArgs e)
         {
-
+            frmCitas citas = new frmCitas();
+            AbrirFormInPanel(citas);
+            this.panelCont.Show();
         }
 
         private void button14_Click(object sender, EventArgs e)

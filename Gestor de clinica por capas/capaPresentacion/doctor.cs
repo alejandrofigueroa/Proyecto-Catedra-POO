@@ -161,5 +161,10 @@ namespace capaPresentacion
             txtEspecialidad.Text = dvgDoctores.Rows[pocision].Cells[2].Value.ToString();
             txtDPersonal.Text = txtEspecialidad.Text = dvgDoctores.Rows[pocision].Cells[1].Value.ToString(); ;
         }
+
+        private void dvgDoctores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

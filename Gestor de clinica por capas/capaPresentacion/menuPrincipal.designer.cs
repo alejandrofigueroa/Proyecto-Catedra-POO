@@ -478,7 +478,7 @@
             this.panelBotonClinica.Controls.Add(this.btnClinicaDoctores);
             this.panelBotonClinica.Controls.Add(this.btnClinica);
             this.panelBotonClinica.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBotonClinica.Location = new System.Drawing.Point(0, 154);
+            this.panelBotonClinica.Location = new System.Drawing.Point(0, 151);
             this.panelBotonClinica.Name = "panelBotonClinica";
             this.panelBotonClinica.Size = new System.Drawing.Size(250, 50);
             this.panelBotonClinica.TabIndex = 5;
@@ -572,7 +572,7 @@
             this.PanelBotonLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBotonLaboratorio.Location = new System.Drawing.Point(0, 100);
             this.PanelBotonLaboratorio.Name = "PanelBotonLaboratorio";
-            this.PanelBotonLaboratorio.Size = new System.Drawing.Size(250, 54);
+            this.PanelBotonLaboratorio.Size = new System.Drawing.Size(250, 51);
             this.PanelBotonLaboratorio.TabIndex = 0;
             // 
             // button9

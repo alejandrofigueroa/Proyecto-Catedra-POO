@@ -11,28 +11,19 @@ using capaDatosNegocios;
 
 namespace capaPresentacion
 {
-    public partial class frmPaciente : Form
+    public partial class frmCitas : Form
     {
         storedProcedure sp = new storedProcedure();
         private int edit_indice = -1;
+        private List<Citas> citas = new List<Citas>();
 
-        private List<Paciente> paciente = new List<Paciente>();
-        public frmPaciente()
+
+        public frmCitas()
         {
             InitializeComponent();
         }
 
-        private void frmPaciente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

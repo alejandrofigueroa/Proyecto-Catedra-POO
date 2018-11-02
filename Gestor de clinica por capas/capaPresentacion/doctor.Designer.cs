@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboUsuario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbUsuario = new System.Windows.Forms.PictureBox();
             this.txtEspecialidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDPersonal = new System.Windows.Forms.TextBox();
@@ -48,10 +47,11 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblClinica = new System.Windows.Forms.Label();
+            this.pbUsuario = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDoctores)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,17 +101,6 @@
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Usuario";
-            // 
-            // pbUsuario
-            // 
-            this.pbUsuario.ErrorImage = global::capaPresentacion.Properties.Resources.clinic_logo___Buscar_con_Google___Google_Chrome;
-            this.pbUsuario.InitialImage = global::capaPresentacion.Properties.Resources.clinic_logo___Buscar_con_Google___Google_Chrome;
-            this.pbUsuario.Location = new System.Drawing.Point(30, 44);
-            this.pbUsuario.Name = "pbUsuario";
-            this.pbUsuario.Size = new System.Drawing.Size(118, 146);
-            this.pbUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUsuario.TabIndex = 8;
-            this.pbUsuario.TabStop = false;
             // 
             // txtEspecialidad
             // 
@@ -193,6 +182,7 @@
             this.dvgDoctores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dvgDoctores.Size = new System.Drawing.Size(1100, 272);
             this.dvgDoctores.TabIndex = 19;
+            this.dvgDoctores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDoctores_CellContentClick);
             this.dvgDoctores.DoubleClick += new System.EventHandler(this.dvgDoctores_DoubleClick);
             // 
             // panel2
@@ -293,6 +283,17 @@
             this.lblClinica.TabIndex = 26;
             this.lblClinica.Text = "clinica";
             // 
+            // pbUsuario
+            // 
+            this.pbUsuario.ErrorImage = global::capaPresentacion.Properties.Resources.clinic_logo___Buscar_con_Google___Google_Chrome;
+            this.pbUsuario.InitialImage = global::capaPresentacion.Properties.Resources.clinic_logo___Buscar_con_Google___Google_Chrome;
+            this.pbUsuario.Location = new System.Drawing.Point(30, 44);
+            this.pbUsuario.Name = "pbUsuario";
+            this.pbUsuario.Size = new System.Drawing.Size(118, 146);
+            this.pbUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUsuario.TabIndex = 8;
+            this.pbUsuario.TabStop = false;
+            // 
             // frmDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,9 +318,9 @@
             this.Load += new System.EventHandler(this.frmDoctor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDoctores)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
