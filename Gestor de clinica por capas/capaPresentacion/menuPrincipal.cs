@@ -158,7 +158,9 @@ namespace capaPresentacion
 
         private void btn_Click(object sender, EventArgs e)
         {
-
+            frmCitas citas = new frmCitas();
+            AbrirFormInPanel(citas);
+            this.panelCont.Show();
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -478,5 +480,11 @@ namespace capaPresentacion
 
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmPaciente paciente = new frmPaciente();
+            AbrirFormInPanel(paciente);
+            this.panelCont.Show();
+        }
     }
 }

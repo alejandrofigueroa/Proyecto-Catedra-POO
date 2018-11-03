@@ -58,3 +58,5 @@ C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresenta
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.pdb
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.frmPaciente.resources
 >>>>>>> master
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.frmCitas.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.frmPaciente.resources

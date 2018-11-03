@@ -20,3 +20,4 @@ C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaDatosNeg
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.csproj.CoreCompileInputs.cache
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.dll
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.pdb
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Debug\capaDatosNegocios.csprojAssemblyReference.cache
