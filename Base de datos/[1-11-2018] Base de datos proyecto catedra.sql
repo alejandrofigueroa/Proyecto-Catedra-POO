@@ -75,7 +75,7 @@ CREATE TABLE notificacion
 Id_Notificacion int identity not null primary key,
 Emisor varchar(50),
 Mensaje varchar(255),
-FK_IDusuario varchar(50) not null foreign key (fk_IDusuario) references usuario(ID_usuario)
+Fk_IDUsuario varchar(50) not null foreign key (Fk_IDUsuario) references usuario(ID_usuario)
 )
 GO
 
@@ -83,7 +83,7 @@ create table doctor
 (Id_Doctor int not null identity primary key,--con identity no es necesario estarle poniendo datos en la primary key, el solo le pone datos
 especialidad varchar(255),--especifica a que se dedica, si es odontologo, laboratirista, ginecologo, tecnologo, etc...
 descripcion_Personal varchar(255), --informacion extra que quiera aportar el doctor
-Fk_IDUsuario varchar(50) unique not null foreign key (Fk_IDUsuario) references usuario(id_usuario) -- a que clinica pertenece el doc
+Fk_IDUsuario varchar(50) unique not null foreign key (Fk_IDUsuario) references usuario(ID_usuario) -- a que clinica pertenece el doc
 )
 GO
 
@@ -269,13 +269,21 @@ GO
 
 	--creando mantenimiento usuarios
 		create procedure clinicas.verUsuario(
-			@id_usuario varchar(50)--//para verificar de quien es el mensaje
+			@id_usuario varchar(50)
 		)
 		as
 			select * from clinicas.usuario
 			inner join clinicas.clinica On clinicas.usuario.Fk_IDClinica = clinicas.clinica.ID_Clinica
 			where ID_usuario = @id_usuario;
 			
+		GO
+
+		create procedure clinicas.BuscarUsuario(
+			@ID_Usuario varchar(50) 
+		)
+		as
+			SELECT * FROM clinicas.usuario
+			WHERE id_usuario LIKE @ID_Usuario ;
 		GO
 
 		create procedure clinicas.modificarUsuario(
@@ -295,21 +303,56 @@ GO
 			Where id_usuario = @id_usuario;
 		GO
 			
+			create procedure clinicas.modificarUsuarioRol(
+			@id_usuario varchar(50),
+			@Pass varchar(50) ,
+			@Nombre varchar(50),
+			@Apellido varchar(50),
+			@Direccion varchar(100),
+			@Telefono varchar(9),
+			@Dui varchar(14),
+			@Genero varchar (15),
+			@fotografia varchar(max),
+			@FK_Rol int,
+			@Fk_IDClinica int
+			)
+		as
+			UPDATE clinicas.usuario
+			set Pass = @Pass, Nombre = @Nombre, Apellido = @Apellido,Direccion = @Direccion, Telefono = @Telefono,Dui = @Dui,Genero=@Genero, FK_Rol= @FK_Rol, Fk_IDClinica = @Fk_IDClinica
+			
+			Where id_usuario = @id_usuario;
+		GO
+
+		create procedure clinicas.insertarUsuario(
+			@id_usuario varchar(50),
+			@Pass varchar(50) ,
+			@Nombre varchar(50),
+			@Apellido varchar(50),
+			@Direccion varchar(100),
+			@Telefono varchar(9),
+			@Dui varchar(14),
+			@Genero varchar (15),
+			@fotografia varchar(max),
+			@FK_Rol int,
+			@Fk_IDClinica int
+			)
+		as
+			INSERT INTO clinicas.usuario
+			values(@id_usuario, @Pass, @Nombre, @Apellido,@Direccion, @Telefono,@Dui,@Genero,@fotografia,@FK_Rol, @Fk_IDClinica)
+		GO
 
 	--creando mantenimiento notificaciones
 
 		
-		GO
-		
 		create procedure clinicas.enviarNotificacion(
 			
 			@emisor varchar(50),
-			@receptor varchar(50),
-			@mensaje varchar(255)
+			@mensaje varchar(255),
+			@FK_IDusuario varchar(50)
 		)
 		as
 			insert into clinicas.notificacion
-			values(@emisor,@receptor,@mensaje);
+			values(@emisor,@mensaje,@FK_IDusuario );
 		GO
 
 
@@ -480,7 +523,10 @@ GO
 	--ejecuciones
 	select *  from clinicas.clinica
 	
-	exec clinicas.verNotificacion @id_usuario = 'admin0';
+	
+	exec clinicas.enviarNotificacion @emisor = 'admin0', @mensaje = 'Hola', @FK_IDusuario = 'admin1';
+	GO
+	exec clinicas.verNotificacion @id_usuario = 'admin1';
 	GO
 	exec clinicas.BuscarDoctor @Fk_IDUsuario = 'admin0';
 	GO

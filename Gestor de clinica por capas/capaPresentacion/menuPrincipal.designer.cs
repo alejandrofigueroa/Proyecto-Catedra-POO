@@ -86,6 +86,7 @@
             this.nombreLogo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BarraDeEstado = new System.Windows.Forms.StatusStrip();
+            this.statusLabelError = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusLabelErrores = new System.Windows.Forms.ToolStripStatusLabel();
             this.barraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
@@ -114,6 +115,7 @@
             this.PanelBotonLaboratorio.SuspendLayout();
             this.Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BarraDeEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // barraTitulo
@@ -368,6 +370,7 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Usuarios";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel5
             // 
@@ -438,6 +441,7 @@
             this.Enviar.TabIndex = 5;
             this.Enviar.Text = "Enviar";
             this.Enviar.UseVisualStyleBackColor = false;
+            this.Enviar.Click += new System.EventHandler(this.Enviar_Click);
             // 
             // panel13
             // 
@@ -875,10 +879,20 @@
             // BarraDeEstado
             // 
             this.BarraDeEstado.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BarraDeEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabelError});
             this.BarraDeEstado.Location = new System.Drawing.Point(0, 593);
             this.BarraDeEstado.Name = "BarraDeEstado";
             this.BarraDeEstado.Size = new System.Drawing.Size(1020, 22);
             this.BarraDeEstado.TabIndex = 6;
+            // 
+            // statusLabelError
+            // 
+            this.statusLabelError.ForeColor = System.Drawing.Color.White;
+            this.statusLabelError.Name = "statusLabelError";
+            this.statusLabelError.Size = new System.Drawing.Size(10, 17);
+            this.statusLabelError.Text = " ";
+            this.statusLabelError.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // statusLabelErrores
             // 
@@ -933,6 +947,8 @@
             this.Logo.ResumeLayout(false);
             this.Logo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.BarraDeEstado.ResumeLayout(false);
+            this.BarraDeEstado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -997,6 +1013,7 @@
         private System.Windows.Forms.ComboBox cboDestino;
         private System.Windows.Forms.Button Enviar;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.ToolStripStatusLabel statusLabelError;
     }
 }
 

@@ -49,6 +49,7 @@ namespace capaPresentacion
 
             lblUsuarioActual.Text = usuarioSesion;
             roles();
+            cargarDestino();
         }
 
         private void btnSlide_Click(object sender, EventArgs e)
@@ -125,7 +126,7 @@ namespace capaPresentacion
                 notiParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";
 
                 List<object[]> datos = sp.lt(notiParametros, "verNotificacion");
-
+                datos.Reverse();
                 foreach (object[] notificacion in datos)
                 {
                     listNotificaciones.Items.Add("[" + notificacion[1].ToString() + "] •" + notificacion[2].ToString());
@@ -284,7 +285,56 @@ namespace capaPresentacion
         }
 
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmPaciente paciente = new frmPaciente();
+            AbrirFormInPanel(paciente);
+            this.panelCont.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            usuarios usuario = new usuarios();
+            AbrirFormInPanel(usuario);
+            this.panelCont.Show();
+        }
         //----------------------------------funciones----------------------------------
+
+        storedProcedure sp = new storedProcedure();
+
+        // envia mensajes
+        public void enviarMensaje(string Mensaje, string usuarioDestino, string emisor) {
+        string[] mensajeParametros = new string[3];
+            mensajeParametros[0] = "@emisor= " + emisor;
+            mensajeParametros[1] = "@mensaje= " + Mensaje;
+            mensajeParametros[2] = "@FK_IDUsuario = " + usuarioDestino;
+
+            if (sp.pb(mensajeParametros, "enviarNotificacion"))
+            {
+                btnNotificaciones_Click(null, null);
+                txtMensaje.Text = "";
+                cboDestino.Text = "";
+                MenuVertical.errores = "Mensaje enviado correctamente";
+            }
+            else//si tira false, quiere decir que intentamos actualizar los datos por que los datos ya existen
+            {
+                    MenuVertical.errores = "No se pudo enviar el mensaje";
+            }
+        }
+        //cargar la lista de usuarios en el combo box para enviar mensajes
+            public void cargarDestino()
+        {
+            string[] docParametros = new string[1];
+            docParametros[0] = "@id_usuario = " + MenuVertical.usuarioSesion + "";//guardamos los parametros que queremos, no le ponemos las comillas simples al parametro, dará error
+
+            List<object[]> datos = sp.list("usuario");//mandamos a llamar la clase sp con la funcion lt
+
+            foreach (object[] usuario in datos)//cargamos los datos en nuestra lista
+            {
+                cboDestino.Items.Add(usuario[0].ToString());
+            }
+        }
+
 
         //carga variables locales
         public static void cargarVariables()
@@ -399,7 +449,7 @@ namespace capaPresentacion
             int anio = DateTime.Now.Year;
             string fecha = "";
             string time = "";
-            statusLabelErrores.Text = MenuVertical.errores;
+            statusLabelError.Text = MenuVertical.errores;
             if (hh < 10)
             {
                 if (hh > 0)
@@ -480,11 +530,22 @@ namespace capaPresentacion
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void Enviar_Click(object sender, EventArgs e)
         {
-            frmPaciente paciente = new frmPaciente();
-            AbrirFormInPanel(paciente);
-            this.panelCont.Show();
+            try
+            {
+                enviarMensaje(txtMensaje.Text, cboDestino.SelectedItem.ToString(), MenuVertical.usuarioSesion);
+            }
+            catch (Exception ex) {
+                MenuVertical.errores = "No se pudo enviar el mensaje";
+            }
         }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
