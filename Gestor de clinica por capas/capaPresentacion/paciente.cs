@@ -140,5 +140,10 @@ namespace capaPresentacion
             cmbSexo.SelectedItem = dgvPaciente.Rows[posicion].Cells[7].Value.ToString();
             cmbClinico.SelectedIndex = Convert.ToInt32(dgvPaciente.Rows[posicion].Cells[8].Value.ToString());
         }
+
+        private void dgvPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

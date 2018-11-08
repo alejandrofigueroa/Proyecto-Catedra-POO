@@ -254,10 +254,18 @@ GO
 
 Create procedure Clinicas.ModificarPaciente
 (@ID_Paciente int,
-@Nombre varchar(50))
+@Nombre varchar(50),
+@Apellido varchar (50),
+@Direccion varchar(100),
+@Telefono int,
+@Email varchar (50),
+@Fecha_Nacimiento date, 
+@Sexo varchar(15),
+@FK_Clinica int
+)
 as 
 update clinicas.Paciente
-set Nombre = @Nombre
+set Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Email = @Email, Fecha_Nacimiento = @Fecha_Nacimiento, Sexo = @Sexo, Fk_IDClinica = @FK_Clinica
 where ID_Paciente = @ID_Paciente
 GO
 
@@ -473,10 +481,15 @@ GO
 
 	CREATE PROCEDURE Clinicas.ActualizarCita
 	(@id_Cita int,
-	@fecha date)
+	@fecha date,
+	@Descripcion varchar (255),
+	@precio decimal(18,0),
+	@Fk_IdPaciente int,
+	@Fk_IdDoctor int 
+	)
 	as
 	update clinicas.cita
-	set fecha= @fecha
+	set fecha= @fecha, Descripcion = @Descripcion, precio = @precio, Fk_IdPaciente = @Fk_IdPaciente, Fk_IdDoctor = @Fk_IdDoctor
 	where @id_Cita= id_Cita
 	go
 
