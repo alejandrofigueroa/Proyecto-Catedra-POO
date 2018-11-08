@@ -16,9 +16,6 @@ C:\Users\Jeffry\Documents\Mis Proyectos\Proyecto-de-catedra\Gestor de clinica po
 C:\Users\Jeffry\Documents\Mis Proyectos\Proyecto-de-catedra\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.frmDoctor.resources
 C:\Users\Jeffry\Documents\Mis Proyectos\Proyecto-de-catedra\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.SplashScreen.resources
 C:\Users\Jeffry\Documents\Mis Proyectos\Proyecto-de-catedra\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.aboutUs.resources
-C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\bin\Debug\capaPresentacion.exe.config
-C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\bin\Debug\capaPresentacion.exe
-C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\bin\Debug\capaPresentacion.pdb
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\bin\Debug\capaDatosNegocios.dll
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\bin\Debug\capaDatosNegocios.pdb
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.csprojAssemblyReference.cache
@@ -32,8 +29,6 @@ C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresenta
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.csproj.GenerateResource.cache
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.csproj.CoreCompileInputs.cache
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.csproj.CopyComplete
-C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.exe
-C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.pdb
 C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.frmPaciente.resources
 C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\bin\Debug\Gestor Medico.exe.config
 C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\bin\Debug\Gestor Medico.exe
@@ -56,3 +51,10 @@ C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clini
 C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Debug\Gestor Medico.exe
 C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Debug\Gestor Medico.pdb
 C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.usuarios.resources
+C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\bin\Debug\Gestor Medico.exe.config
+C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\bin\Debug\Gestor Medico.exe
+C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\bin\Debug\Gestor Medico.pdb
+C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.frmCitas.resources
+C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\capaPresentacion.usuarios.resources
+C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\Gestor Medico.exe
+C:\Users\admin\git\Proyecto-Catedra-POO\Gestor de clinica por capas\capaPresentacion\obj\Debug\Gestor Medico.pdb

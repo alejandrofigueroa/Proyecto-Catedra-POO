@@ -235,19 +235,21 @@ GO
 
 
 
-	--Creando mantenimiento Paciente
+	--Creando mantenimiento Paciente //CAMBIADO
 CREATE PROCEDURE Clinicas.IngresarPaciente
-(@ID_Paciente int,
+(
 @Nombre varchar (50),
 @Apellido varchar (50),
 @Direccion varchar(100),
 @Telefono int,
 @Email varchar (50),
 @Fecha_Nacimiento date, 
-@Sexo varchar(15))
+@Sexo varchar(15),
+@FK_Clinica int
+)
 as 
 insert into Clinicas.Paciente
-values (@ID_Paciente, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Fecha_Nacimiento,@Sexo)
+values (@Nombre, @Apellido, @Direccion, @Telefono, @Email, @Fecha_Nacimiento,@Sexo, @FK_Clinica)
 GO
 
 Create procedure Clinicas.ModificarPaciente
