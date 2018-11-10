@@ -20,10 +20,7 @@ go
 use GestorDeClinica
 go
 
-create table clinica --especificamos que tipo de clinica almacenaremos
-(ID_Clinica int not null identity primary key,
-descripcion varchar(255), 
-)
+create table clinica (ID_Clinica int not null identity primary key,descripcion varchar(255))
 GO
 
 CREATE TABLE paciente --Registros del paciente
@@ -125,8 +122,7 @@ GO
 
 --creando Login administrador
 	--el administrador nos servirá para logearnos en la base de datos y no nos de error al conectarnos en el programa
-Create Login adminClinica
-with PASSWORD = 'admin123'
+Create Login adminClinica with PASSWORD = 'admin123';
 GO
 
 --creamos un esquema para que el usuario que crearemos pueda acceder

@@ -53,8 +53,6 @@ namespace capaPresentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            btnActualizar.Cursor = Cursors.WaitCursor;
-            btnActualizar.Text = "Guardando...";
             if (txtContra.Text == null || txtComprobarcontra == null || txtContra.Text == "" || txtComprobarcontra.Text == "") {
                 MenuVertical.errores = "Parece que los campos de contraseña y comprobar contraseña son erroneos, Por favor verificar si los datos son validos";
                 txtContra.Text = "";

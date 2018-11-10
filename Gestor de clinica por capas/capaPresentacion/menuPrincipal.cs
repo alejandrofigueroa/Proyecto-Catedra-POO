@@ -159,6 +159,7 @@ namespace capaPresentacion
 
         private void btn_Click(object sender, EventArgs e)
         {
+            frmCitas.clinica = 3;
             frmCitas citas = new frmCitas();
             AbrirFormInPanel(citas);
             this.panelCont.Show();
@@ -287,6 +288,7 @@ namespace capaPresentacion
 
         private void button8_Click(object sender, EventArgs e)
         {
+            frmPaciente.clinica = 3;
             frmPaciente paciente = new frmPaciente();
             AbrirFormInPanel(paciente);
             this.panelCont.Show();
@@ -546,6 +548,27 @@ namespace capaPresentacion
 
         }
 
-        
+        private void btnClinicaPacientes_Click(object sender, EventArgs e)
+        {
+            frmPaciente.clinica = 2;
+            frmPaciente paciente = new frmPaciente();
+            AbrirFormInPanel(paciente);
+            this.panelCont.Show();
+        }
+
+        private void btnClinicaCitas_Click(object sender, EventArgs e)
+        {
+            frmCitas.clinica = 2;
+            frmCitas citas = new frmCitas();
+            AbrirFormInPanel(citas);
+            this.panelCont.Show();
+        }
+
+        private void btnClinicaDoctores_Click(object sender, EventArgs e)
+        {
+            frmDoctor ingresarDoctor = new frmDoctor();
+            AbrirFormInPanel(ingresarDoctor);
+            this.panelCont.Show();
+        }
     }
 }

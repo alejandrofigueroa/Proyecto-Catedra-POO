@@ -17,6 +17,7 @@ namespace capaDatosNegocios
         public bool pb(string[] obj, string nsp) //sirve para insertar, actualizar y borrar, devuelve true o false
         {
             Conexion.cerrarConexion();
+            Conexion.AbrirConexion();
             try
             {
                 SqlCommand comando = new SqlCommand("clinicas." + nsp, Conexion.cnn);//creamos el query, pero esta vez solo le enviaremos el procedimiento almacenado
@@ -31,7 +32,6 @@ namespace capaDatosNegocios
                     comando.Parameters.AddWithValue(words[0], words[1]);//enviamos el parametro para nuestro procedimiento almacenado, aqui agregaremos varios parametros por el foreach
                    
                 }
-                Conexion.AbrirConexion();
                 int co = comando.ExecuteNonQuery();
                 Conexion.cerrarConexion();
                 return true;//si executo el procedimiento con exito devolverá true
@@ -47,6 +47,7 @@ namespace capaDatosNegocios
             try
             {
             Conexion.cerrarConexion();
+                Conexion.AbrirConexion();
                 SqlCommand comando = new SqlCommand("clinicas." + nsp, Conexion.cnn);//creamos el query, pero esta vez solo le enviaremos el procedimiento almacenado
 
                 comando.CommandType = CommandType.StoredProcedure;//especificamos que el comando con el query es de tipo procedimiento almacenado
@@ -60,7 +61,7 @@ namespace capaDatosNegocios
                     }
                     comando.Parameters.AddWithValue(words[0].ToString(), words[1]);//enviamos el parametro para nuestro procedimiento almacenado, aqui agregaremos varios parametros por el foreach
                 }
-            Conexion.AbrirConexion();
+            
             comando.ExecuteReader();
             Conexion.cerrarConexion();
                 return true;//si executo el procedimiento con exito devolverá true
@@ -77,7 +78,7 @@ namespace capaDatosNegocios
 
             try
             {
-                var select = "select * from " + tabla + ";";//creamos un query diciendole que seleccionaremos todos los datos de la tabla parametro
+                var select = "select * from clinicas." + tabla + ";";//creamos un query diciendole que seleccionaremos todos los datos de la tabla parametro
                 var dataAdapter = new SqlDataAdapter(select, Conexion.AbrirConexion());// creamos un data adapter
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);//construimos la consulta
                 var ds = new DataSet();//creamos un nuevo dataset
@@ -95,6 +96,7 @@ namespace capaDatosNegocios
         public DataTable dt(string[] obj, string nsp)//sirve para obtener una tabla de la base de datos con valores especificos
         {
             Conexion.cerrarConexion();
+            Conexion.AbrirConexion();
             DataTable table = new DataTable();//creamos una tabla vacia
 
             try
@@ -111,6 +113,7 @@ namespace capaDatosNegocios
                         table.Rows.Add(data.ToString());//agregamos data en las filas de nuestra tabla
                     }
                     leer.Close();//cerramos el reader
+                    Conexion.cerrarConexion();
                     return  table;//retornamos la tabla
                 }
             }
@@ -147,6 +150,7 @@ namespace capaDatosNegocios
                     lista.Add(filas);//agregamos la fila a la lista
                 }
                 leer.Close();//cerramos el reader
+                Conexion.cerrarConexion();
                 return lista;//retornamos la lista de arrays
             }
             catch (Exception e)
@@ -162,7 +166,7 @@ namespace capaDatosNegocios
         {
             try
             {
-                SqlCommand comando = new SqlCommand("select * from " + tabla , Conexion.AbrirConexion());//creamos el query, pero esta vez solo le enviaremos el procedimiento almacenado
+                SqlCommand comando = new SqlCommand("select * from clinicas." + tabla , Conexion.AbrirConexion());//creamos el query, pero esta vez solo le enviaremos el procedimiento almacenado
                 leer = comando.ExecuteReader();//ejecutamos el comando para obtener los datos del procedimiento almacenado
 
                 List<object[]> lista = new List<object[]>();//creamos una lista de arrays para almacenar las filas de la tabla de la base de datos

@@ -15,7 +15,7 @@ namespace capaPresentacion
     {
         storedProcedure sp = new storedProcedure();
         private int edit_indice = -1;
-
+        public static int clinica;
         private List<Paciente> paciente = new List<Paciente>();
         public frmPaciente()
         {
@@ -24,7 +24,7 @@ namespace capaPresentacion
 
         private void actualizarDatos()
         {
-            dgvPaciente.DataSource = sp.dt("Paciente");
+            dgvPaciente.DataSource = sp.dt("Paciente  where FK_IDClinica = "+clinica);
         }
 
         private void limpiarCampos()
@@ -47,13 +47,13 @@ namespace capaPresentacion
             cmbSexo.Items.Add("Femenino");
             cmbSexo.SelectedIndex = 0;
 
-            cmbClinico.Items.Insert(0, "Seleccione una opcion");
-            foreach (object[] clinica in datos)
+            if (clinica == 2)
             {
-                
-                cmbClinico.Items.Insert(Convert.ToInt32(clinica[0]), clinica[1].ToString());
+                lblClinica.Text = "General";
             }
-            cmbClinico.SelectedIndex = 0;
+            else {
+                lblClinica.Text = "Laboratorio";
+            }
 
             actualizarDatos();
         }
@@ -75,7 +75,7 @@ namespace capaPresentacion
                 pacParametros[4] = "@Email =" + txtEmail.Text;
                 pacParametros[5] = "@Fecha_Nacimiento =" + dtpFecha.Value.ToString("yyyy-MM-dd");
                 pacParametros[6] = "@Sexo =" + cmbSexo.SelectedItem.ToString();
-                pacParametros[7] = "@FK_Clinica =" + cmbClinico.SelectedIndex;
+                pacParametros[7] = "@FK_Clinica =" + clinica;
                 if (sp.pb(pacParametros, "IngresarPaciente"))
                 {
                     MenuVertical.errores = "Tabla creada correctamente";
@@ -138,7 +138,6 @@ namespace capaPresentacion
             txtEmail.Text = dgvPaciente.Rows[posicion].Cells[5].Value.ToString();
             dtpFecha.Value = Convert.ToDateTime(dgvPaciente.Rows[posicion].Cells[6].Value);
             cmbSexo.SelectedItem = dgvPaciente.Rows[posicion].Cells[7].Value.ToString();
-            cmbClinico.SelectedIndex = Convert.ToInt32(dgvPaciente.Rows[posicion].Cells[8].Value.ToString());
         }
 
         private void dgvPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)

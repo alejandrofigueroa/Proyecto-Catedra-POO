@@ -674,6 +674,7 @@
             this.btnClinicaPacientes.Text = " Pacientes";
             this.btnClinicaPacientes.UseVisualStyleBackColor = true;
             this.btnClinicaPacientes.Visible = false;
+            this.btnClinicaPacientes.Click += new System.EventHandler(this.btnClinicaPacientes_Click);
             // 
             // btnClinicaCitas
             // 
@@ -692,6 +693,7 @@
             this.btnClinicaCitas.Text = " Citas";
             this.btnClinicaCitas.UseVisualStyleBackColor = true;
             this.btnClinicaCitas.Visible = false;
+            this.btnClinicaCitas.Click += new System.EventHandler(this.btnClinicaCitas_Click);
             // 
             // btnClinicaDoctores
             // 
@@ -711,6 +713,7 @@
             this.btnClinicaDoctores.Text = "Doctores";
             this.btnClinicaDoctores.UseVisualStyleBackColor = false;
             this.btnClinicaDoctores.Visible = false;
+            this.btnClinicaDoctores.Click += new System.EventHandler(this.btnClinicaDoctores_Click);
             // 
             // btnClinica
             // 
@@ -758,7 +761,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(250, 25);
             this.button9.TabIndex = 10;
-            this.button9.Tag = "Estudios";
+            this.button9.Tag = "Estudios2";
             this.button9.Text = "Estudios";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Visible = false;

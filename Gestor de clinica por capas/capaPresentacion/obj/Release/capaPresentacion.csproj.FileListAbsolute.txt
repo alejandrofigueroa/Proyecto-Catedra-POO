@@ -1,0 +1,22 @@
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\bin\Release\Gestor Medico.exe.config
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\bin\Release\Gestor Medico.exe
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\bin\Release\Gestor Medico.pdb
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\bin\Release\capaDatosNegocios.dll
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\bin\Release\capaDatosNegocios.pdb
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.csprojAssemblyReference.cache
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.frmCitas.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.frmDoctor.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.frmPerfil.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.aboutUs.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.instaladorBD.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.Login.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.MenuVertical.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.frmPaciente.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.Properties.Resources.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.SplashScreen.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.usuarios.resources
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.csproj.GenerateResource.cache
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.csproj.CoreCompileInputs.cache
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\capaPresentacion.csproj.CopyComplete
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\Gestor Medico.exe
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaPresentacion\obj\Release\Gestor Medico.pdb

@@ -1,0 +1,6 @@
+Create Installer Using Inno Setup
+
+https://www.c-sharpcorner.com/UploadFile/tunturu/installer-using-inno-setup/
+
+Innosetup adding multiple exe files and executing within the main setup
+https://stackoverflow.com/questions/16644741/innosetup-adding-multiple-exe-files-and-executing-within-the-main-setup

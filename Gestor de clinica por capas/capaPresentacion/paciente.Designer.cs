@@ -45,7 +45,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
-            this.cmbClinico = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblPaciente = new System.Windows.Forms.Label();
+            this.lblClinica = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
@@ -217,15 +217,6 @@
             this.cmbSexo.Size = new System.Drawing.Size(312, 21);
             this.cmbSexo.TabIndex = 9;
             // 
-            // cmbClinico
-            // 
-            this.cmbClinico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbClinico.FormattingEnabled = true;
-            this.cmbClinico.Location = new System.Drawing.Point(361, 256);
-            this.cmbClinico.Name = "cmbClinico";
-            this.cmbClinico.Size = new System.Drawing.Size(350, 21);
-            this.cmbClinico.TabIndex = 10;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -326,11 +317,23 @@
             this.lblPaciente.Text = "IDPaciente";
             this.lblPaciente.Visible = false;
             // 
+            // lblClinica
+            // 
+            this.lblClinica.AutoSize = true;
+            this.lblClinica.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.lblClinica.ForeColor = System.Drawing.Color.Black;
+            this.lblClinica.Location = new System.Drawing.Point(367, 257);
+            this.lblClinica.Name = "lblClinica";
+            this.lblClinica.Size = new System.Drawing.Size(53, 17);
+            this.lblClinica.TabIndex = 20;
+            this.lblClinica.Text = "Clinica";
+            // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 610);
+            this.Controls.Add(this.lblClinica);
             this.Controls.Add(this.lblPaciente);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -340,7 +343,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbClinico);
             this.Controls.Add(this.cmbSexo);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.txtEmail);
@@ -381,7 +383,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.ComboBox cmbSexo;
-        private System.Windows.Forms.ComboBox cmbClinico;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -391,5 +392,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblPaciente;
+        private System.Windows.Forms.Label lblClinica;
     }
 }

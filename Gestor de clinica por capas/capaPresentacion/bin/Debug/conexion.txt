@@ -1,0 +1,1 @@
+Server=LAPTOP-4SPQ8LL0\SQLEXPRESS;Integrated security = SSPI;database=GestorDeClinicaBD

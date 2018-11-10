@@ -1,0 +1,14 @@
+Inno Setup
+http://www.jrsoftware.org/isinfo.php
+
+Inno Setup Third-Party Files
+http://www.jrsoftware.org/is3rdparty.php
+
+Creating an Installer in Visual Studio and Inno Setup
+https://www.codeproject.com/Tips/1034162/Creating-an-Installer-in-Visual-Studio-and-Inno-Se
+
+Inno Setup
+https://marketplace.visualstudio.com/items?itemName=idleberg.innosetup
+
+Creating installations using Inno Setup in Visual Studio
+https://www.technical-recipes.com/2017/creating-installations-using-inno-setup-in-visual-studio/

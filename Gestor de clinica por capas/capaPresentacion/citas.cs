@@ -16,7 +16,7 @@ namespace capaPresentacion
         storedProcedure sp = new storedProcedure();
         private int edit_indice = -1;
         private List<Citas> citas = new List<Citas>();
-
+        public static int clinica;
 
         public frmCitas()
         {
@@ -79,13 +79,13 @@ namespace capaPresentacion
             
             
 
-            List<object[]> datosDoctor = sp.list("doctor");
-            List<object[]> datosPacientes = sp.list("paciente");
+            List<object[]> datosDoctor = sp.list("doctor INNER JOIN clinicas.usuario ON ID_usuario = FK_IDUsuario WHERE clinicas.usuario.FK_IDClinica =" + frmCitas.clinica);
+            List<object[]> datosPacientes = sp.list("paciente where FK_IDClinica = "+frmCitas.clinica+";");
 
             cmbDoctor.Items.Insert(0, "Seleccione un doctor");
             foreach (object[] doctor in datosDoctor) 
             {
-                cmbDoctor.Items.Insert(Convert.ToInt32(doctor[0]), doctor[1].ToString());
+                cmbDoctor.Items.Add( doctor[1].ToString());
             }
             cmbDoctor.SelectedIndex = 0;
 
@@ -93,7 +93,7 @@ namespace capaPresentacion
             foreach (object[] paciente in datosPacientes)
             {
                 
-                cmbPaciente.Items.Insert(Convert.ToInt32(paciente[0]), paciente[1].ToString());
+                cmbPaciente.Items.Add(paciente[1].ToString());
             }
 
             

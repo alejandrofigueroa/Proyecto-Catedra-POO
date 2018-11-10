@@ -1,0 +1,5 @@
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\bin\Release\capaDatosNegocios.dll
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\bin\Release\capaDatosNegocios.pdb
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Release\capaDatosNegocios.csproj.CoreCompileInputs.cache
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Release\capaDatosNegocios.dll
+C:\Users\Jeffry\Documents\Mis Proyectos\git\proyecto POO Catedra\Gestor de clinica por capas\capaDatosNegocios\obj\Release\capaDatosNegocios.pdb
