@@ -28,7 +28,7 @@ namespace capaPresentacion
         public bool bandera = false;
         public string sql;
 
-        public string[] proc = new string[33];
+        public string[] proc = new string[35];
         System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
 
         
@@ -363,6 +363,9 @@ namespace capaPresentacion
             proc[30] = "CREATE PROCEDURE Clinicas.VerTpEstudio (@idTipo_Estudio int) as select * from tipoEstudio where @idTipo_Estudio = IdTipo_Estudio ";
             proc[31] = "CREATE PROCEDURE Clinicas.ActualizarTpEstudio (@idTipo_Estudio int, @precio decimal(18,0)) as update Clinicas.tipoEstudio set precio = @precio where @idTipo_Estudio=IdTipo_Estudio ";
             proc[32] = "CREATE PROCEDURE clinicas.verPermisos( @ID_rol int ) as select * from clinicas.Permiso WHERE fk_rol = @ID_rol; ";
+            proc[33] = "CREATE PROCEDURE Clinicas.actualizarDoctor (@especialidad varchar(255),@descripcion_Personal varchar(255),@Fk_IDUsuario varchar(50))as update Clinicas.doctor set especialidad = @especialidad, descripcion_Personal = @descripcion_Personal where @Fk_IDUsuario= Fk_IDUsuario";
+            proc[34] = "CREATE PROCEDURE Clinicas.BorrarUsuario (@id_usuario varchar(50)) as delete from clinicas.usuario where clinicas.usuario.ID_usuario = @id_usuario";
+
 
             leerProcedimientos();
         }
@@ -500,7 +503,7 @@ namespace capaPresentacion
             else
             {
 
-                progressBar1.Value = (Convert.ToInt32(p) * 100) / 52;
+                progressBar1.Value = (Convert.ToInt32(p) * 100) / 54;
             }
         }
 
@@ -543,19 +546,8 @@ namespace capaPresentacion
             SetText(Path.Combine(Path.Combine(Application.StartupPath)));
             using (StreamWriter mylogs = File.AppendText(rutaCompleta))         //se crea el archivo
             {
-
-                //se adiciona alguna información y la fecha
-
-
-                DateTime dateTime = new DateTime();
-                dateTime = DateTime.Now;
-                string strDate = Convert.ToDateTime(dateTime).ToString("yyMMdd");
-
                 mylogs.WriteLine(texto);
-
                 mylogs.Close();
-
-
             }
         }
     }

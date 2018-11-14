@@ -28,6 +28,28 @@ namespace capaPresentacion
 
 
         Timer t = new Timer();
+        public static void MensajeError(bool activado) {
+            if (activado) {
+                activado = false;
+                MessageBox.Show(MenuVertical.errores, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public static void MensajeAdvertencia(bool activado)
+        {
+            if (activado)
+            {
+                activado = false;
+                MessageBox.Show(MenuVertical.errores, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        public static void MensajeInformacion(bool activado)
+        {
+            if (activado)
+            {
+                activado = false;
+                MessageBox.Show(MenuVertical.errores, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
         public MenuVertical()
         {
@@ -236,6 +258,7 @@ namespace capaPresentacion
 
         private void btnIngresarDoctorLab_Click(object sender, EventArgs e)
         {
+            frmDoctor.clinica = "3";
             frmDoctor ingresarDoctor= new frmDoctor();
             AbrirFormInPanel(ingresarDoctor);
             this.panelCont.Show();
@@ -566,9 +589,36 @@ namespace capaPresentacion
 
         private void btnClinicaDoctores_Click(object sender, EventArgs e)
         {
+            frmDoctor.clinica = "2";
             frmDoctor ingresarDoctor = new frmDoctor();
             AbrirFormInPanel(ingresarDoctor);
             this.panelCont.Show();
+        }
+
+        
+
+        private void panelCont_MouseEnter(object sender, EventArgs e)
+        {
+            if (menuPrincipal.Width == 250)
+            {
+                menuPrincipal.Width = 80;
+                panelBotonClinica.Height = 50;
+                PanelBotonLaboratorio.Height = 50;
+
+            }
+            else
+            {
+                //menuPrincipal.Width = 250;
+            }
+
+            if (menuOpciones.Width == 250)
+            {
+                menuOpciones.Width = 0;
+            }
+            else
+            {
+                //menuOpciones.Width = 250;
+            }
         }
     }
 }

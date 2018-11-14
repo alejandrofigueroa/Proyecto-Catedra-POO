@@ -24,7 +24,7 @@ namespace capaPresentacion
 
         private void actualizarDatos()
         {
-            dgvPaciente.DataSource = sp.dt("Paciente  where FK_IDClinica = "+clinica);
+            dgvPaciente.DataSource = sp.dt("Paciente  where clinicas.paciente.FK_IDClinica = "+clinica, "clinicas.paciente.Id_paciente No,clinicas.paciente.Nombre, clinicas.paciente.Apellido, clinicas.paciente.Direccion, clinicas.paciente.Telefono, clinicas.paciente.Email, clinicas.paciente.Fecha_Nacimiento Nacimiento, clinicas.paciente.Sexo");
         }
 
         private void limpiarCampos()
@@ -41,11 +41,10 @@ namespace capaPresentacion
         private void frmPaciente_Load(object sender, EventArgs e)
         {
             List<object[]> datos = sp.list("clinica");
-
             cmbSexo.Items.Clear();
+            cmbSexo.Items.Insert(0, "Seleccione un Genero");
             cmbSexo.Items.Add("Masculino");
             cmbSexo.Items.Add("Femenino");
-            cmbSexo.SelectedIndex = 0;
 
             if (clinica == 2)
             {
@@ -107,21 +106,25 @@ namespace capaPresentacion
             try
             {
                 string[] pacParametros = new string[1];
-                pacParametros[0] = "@ID_Paciente =" + Convert.ToInt32(lblPaciente.Text);
+                pacParametros[0] = "@ID_Paciente = " + lblPaciente.Text;
                 if (sp.pb(pacParametros, "EliminarPaciente"))
                 {
-                    MenuVertical.errores = "Dato borrado correctamente";
+                    MenuVertical.errores = "Paciente borrado correctamente";
+                    MenuVertical.MensajeInformacion(true);
                     actualizarDatos();
                     limpiarCampos();
                 }
                 else
                 {
-                    MenuVertical.errores = "No se pudo borrar el dato";
+                    MenuVertical.errores = "No se puede borrar el paciente, Revise si este paciente tiene una cita y eliminela";
+                    MenuVertical.MensajeAdvertencia(true);
+                    
+
                 }
             }
             catch (Exception exe)
             {
-                MenuVertical.errores = "[ERROR] - " + exe.ToString();
+                MenuVertical.errores = "No se pudo borrar el paciente";
             }
         }
 
@@ -143,6 +146,52 @@ namespace capaPresentacion
         private void dgvPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtEmail.Text = "";
+            txtTelefono.Text = "";
+            txtDireccion.Text = "";
+            cmbSexo.SelectedIndex = 0;
+        }
+
+        private void dgvPaciente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int pocision = dgvPaciente.SelectedCells[0].RowIndex;
+            edit_indice = pocision;
+            lblPaciente.Text = dgvPaciente.Rows[pocision].Cells[0].Value.ToString();
+            txtNombre.Text = dgvPaciente.Rows[pocision].Cells[1].Value.ToString();
+            txtApellido.Text = dgvPaciente.Rows[pocision].Cells[2].Value.ToString();
+            txtDireccion.Text = dgvPaciente.Rows[pocision].Cells[3].Value.ToString();
+            txtTelefono.Text = dgvPaciente.Rows[pocision].Cells[4].Value.ToString();
+            txtEmail.Text = dgvPaciente.Rows[pocision].Cells[5].Value.ToString();
+            dtpFecha.Value = Convert.ToDateTime( dgvPaciente.Rows[pocision].Cells[6].Value.ToString());
+            cmbSexo.SelectedItem = dgvPaciente.Rows[pocision].Cells[7].Value.ToString();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string[] docParametros = new string[1];//creamos un string para los parametros
+            docParametros[0] = "@Fk_IDUsuario = " + lblPaciente.Text + "";//guardamos los parametros que queremos, no le ponemos las comillas simples al parametro, dará error
+
+            try
+            {
+                List<object[]> datos = sp.lt(docParametros, "BuscarUsuario");//mandamos a llamar la clase sp con la funcion lt
+
+                foreach (object[] notificacion in datos)//cargamos los datos en nuestra lista
+                {
+                    txtNombre.Text = notificacion[1].ToString();
+                    txtApellido.Text = notificacion[2].ToString();
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 }

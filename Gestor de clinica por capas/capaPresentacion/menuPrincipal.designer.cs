@@ -534,6 +534,7 @@
             this.panelCont.Name = "panelCont";
             this.panelCont.Size = new System.Drawing.Size(520, 511);
             this.panelCont.TabIndex = 3;
+            this.panelCont.MouseEnter += new System.EventHandler(this.panelCont_MouseEnter);
             // 
             // panel1
             // 

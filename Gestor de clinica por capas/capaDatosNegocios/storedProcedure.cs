@@ -92,7 +92,27 @@ namespace capaDatosNegocios
                 return null;//si hubo algun error retornará una tabla nula
             }
         }
+        public DataTable dt(string tabla, string columnas) //sirve obtener todos los datos una tabla de la base de datos para mostrarlos en un datagridview
+                                                           //obtenemos como parametro la tabla que queremos consultar
+        {
+            DataTable table = new DataTable();//creamos una nueva tabla vacia
 
+            try
+            {
+                var select = "select "+columnas+" from clinicas." + tabla + ";";//creamos un query diciendole que seleccionaremos todos los datos de la tabla parametro
+                var dataAdapter = new SqlDataAdapter(select, Conexion.AbrirConexion());// creamos un data adapter
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);//construimos la consulta
+                var ds = new DataSet();//creamos un nuevo dataset
+                dataAdapter.Fill(ds);//seteamos los datos
+                return ds.Tables[0];//devolvemos la tabla que obtuvimos de la base de datos
+
+            }
+            catch (Exception e)
+            {
+
+                return null;//si hubo algun error retornará una tabla nula
+            }
+        }
         public DataTable dt(string[] obj, string nsp)//sirve para obtener una tabla de la base de datos con valores especificos
         {
             Conexion.cerrarConexion();
@@ -189,7 +209,33 @@ namespace capaDatosNegocios
             }
         }
 
+        public List<object[]> list(string tabla, string columnas) //sirve obtener todos los datos una tabla de la base de datos para mostrarlos en un datagridview
+                                                 //obtenemos como parametro la tabla que queremos consultar
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand("select "+columnas+" from clinicas." + tabla, Conexion.AbrirConexion());//creamos el query, pero esta vez solo le enviaremos el procedimiento almacenado
+                leer = comando.ExecuteReader();//ejecutamos el comando para obtener los datos del procedimiento almacenado
 
+                List<object[]> lista = new List<object[]>();//creamos una lista de arrays para almacenar las filas de la tabla de la base de datos
+                while (leer.Read())//leerá hasta que ya no encuentre que leer
+                {
+                    object[] filas = new string[leer.FieldCount];//columnas almacenará los campos , fieldcount cuanta cuantas columnas hay en la tabla, pero nos servirá para definir cuantos campos ingresar en nuestra fila
+                    for (int j = 0; j < leer.FieldCount; j++)//repetiremos hasta que nos quedemos sin columnas
+                    {
+                        filas[j] = String.Format("{0}", leer[j]);//ingresamos el campo a la fila
+                    }
+                    lista.Add(filas);//agregamos la fila a la lista
+                }
+                leer.Close();//cerramos el reader
+                return lista;//retornamos la lista de arrays
+            }
+            catch (Exception e)
+            {
+
+                return null;//devolvemos null por si falla algo
+            }
+        }
 
 
     }
